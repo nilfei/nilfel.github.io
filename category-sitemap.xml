@@ -2,48 +2,48 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://lookwi.github.io</loc>
+        <loc>https://fei.dev</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/categories/PHP/</loc>
+        <loc>https://fei.dev/categories/PHP/</loc>
         <lastmod>2019-04-02T13:16:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/categories/C/</loc>
+        <loc>https://fei.dev/categories/C/</loc>
         <lastmod>2019-05-13T14:57:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/categories/ASM/</loc>
+        <loc>https://fei.dev/categories/ASM/</loc>
         <lastmod>2020-01-14T16:45:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/categories/Go/go-micro/</loc>
+        <loc>https://fei.dev/categories/Go/go-micro/</loc>
         <lastmod>2020-03-25T06:40:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/categories/Go/</loc>
+        <loc>https://fei.dev/categories/Go/</loc>
         <lastmod>2020-03-25T06:40:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/</loc>
+        <loc>https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/</loc>
         <lastmod>2020-03-25T06:40:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

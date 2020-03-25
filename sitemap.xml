@@ -3,22 +3,22 @@
 
 
     <sitemap>
-        <loc>https://lookwi.github.io/post-sitemap.xml</loc>
+        <loc>https://fei.dev/post-sitemap.xml</loc>
         <lastmod>2020-03-25T06:40:43.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://lookwi.github.io/page-sitemap.xml</loc>
+        <loc>https://fei.dev/page-sitemap.xml</loc>
         <lastmod>2019-03-23T03:30:31.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://lookwi.github.io/category-sitemap.xml</loc>
+        <loc>https://fei.dev/category-sitemap.xml</loc>
         <lastmod>2019-04-02T13:16:02.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://lookwi.github.io/tag-sitemap.xml</loc>
+        <loc>https://fei.dev/tag-sitemap.xml</loc>
         <lastmod>2019-04-02T13:16:02.000Z</lastmod>
     </sitemap>
 

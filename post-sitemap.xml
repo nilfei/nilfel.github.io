@@ -2,13 +2,13 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://lookwi.github.io</loc>
+        <loc>https://fei.dev</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/2019/03/31/golang-golang-1/</loc>
+        <loc>https://fei.dev/2019/03/31/golang-golang-1/</loc>
         <lastmod>2020-03-25T06:40:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -16,7 +16,7 @@
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/2019/07/11/go-micro-part-1/</loc>
+        <loc>https://fei.dev/2019/07/11/go-micro-part-1/</loc>
         <lastmod>2020-03-25T06:40:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -24,7 +24,7 @@
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/2019/07/10/golang-golang-2/</loc>
+        <loc>https://fei.dev/2019/07/10/golang-golang-2/</loc>
         <lastmod>2020-03-25T06:40:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -32,7 +32,7 @@
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/2019/07/11/golang-golang-3/</loc>
+        <loc>https://fei.dev/2019/07/11/golang-golang-3/</loc>
         <lastmod>2020-03-25T06:40:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -40,7 +40,7 @@
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/2020/03/18/golang-golang-4/</loc>
+        <loc>https://fei.dev/2020/03/18/golang-golang-4/</loc>
         <lastmod>2020-03-25T06:40:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -48,7 +48,7 @@
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/2020/03/18/golang-golang-6/</loc>
+        <loc>https://fei.dev/2020/03/18/golang-golang-6/</loc>
         <lastmod>2020-03-25T06:40:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -56,7 +56,7 @@
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/2020/03/18/golang-golang-5/</loc>
+        <loc>https://fei.dev/2020/03/18/golang-golang-5/</loc>
         <lastmod>2020-03-25T06:40:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -64,7 +64,7 @@
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/2020/03/18/golang-golang-7/</loc>
+        <loc>https://fei.dev/2020/03/18/golang-golang-7/</loc>
         <lastmod>2020-03-25T06:40:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -72,7 +72,7 @@
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/2020/01/15/asm-%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</loc>
+        <loc>https://fei.dev/2020/01/15/asm-%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</loc>
         <lastmod>2020-01-14T16:45:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -80,7 +80,7 @@
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/2019/03/31/clang-cinasm-1/</loc>
+        <loc>https://fei.dev/2019/03/31/clang-cinasm-1/</loc>
         <lastmod>2019-05-13T14:57:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -88,7 +88,7 @@
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/2016/01/01/PHP-%E6%89%93%E9%80%A0%E9%AB%98%E6%95%88%E7%9A%84PHP%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83/</loc>
+        <loc>https://fei.dev/2016/01/01/PHP-%E6%89%93%E9%80%A0%E9%AB%98%E6%95%88%E7%9A%84PHP%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83/</loc>
         <lastmod>2019-04-02T13:16:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

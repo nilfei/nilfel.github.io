@@ -5,9 +5,9 @@
   <subtitle>分享工作日志</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://lookwi.github.io/"/>
+  <link href="https://fei.dev/"/>
   <updated>2020-03-25T06:40:42.000Z</updated>
-  <id>https://lookwi.github.io/</id>
+  <id>https://fei.dev/</id>
   
   <author>
     <name>nilfei</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>golang part2. 数组，切片，Map, 字符串</title>
-    <link href="https://lookwi.github.io/2020/03/18/golang-golang-6/"/>
-    <id>https://lookwi.github.io/2020/03/18/golang-golang-6/</id>
+    <link href="https://fei.dev/2020/03/18/golang-golang-6/"/>
+    <id>https://fei.dev/2020/03/18/golang-golang-6/</id>
     <published>2020-03-18T10:00:00.000Z</published>
     <updated>2020-03-25T06:40:42.000Z</updated>
     
@@ -35,21 +35,21 @@
     
     </summary>
     
-      <category term="Go" scheme="https://lookwi.github.io/categories/Go/"/>
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
     
-      <category term="Go入门系列" scheme="https://lookwi.github.io/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
     
     
-      <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
     
-      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
     
   </entry>
   
   <entry>
     <title>golang part2. 断言，流程控制，运算</title>
-    <link href="https://lookwi.github.io/2020/03/18/golang-golang-5/"/>
-    <id>https://lookwi.github.io/2020/03/18/golang-golang-5/</id>
+    <link href="https://fei.dev/2020/03/18/golang-golang-5/"/>
+    <id>https://fei.dev/2020/03/18/golang-golang-5/</id>
     <published>2020-03-18T10:00:00.000Z</published>
     <updated>2020-03-25T06:40:42.000Z</updated>
     
@@ -65,21 +65,21 @@
     
     </summary>
     
-      <category term="Go" scheme="https://lookwi.github.io/categories/Go/"/>
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
     
-      <category term="Go入门系列" scheme="https://lookwi.github.io/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
     
     
-      <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
     
-      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
     
   </entry>
   
   <entry>
     <title>golang part2. 结构，方法，接口, 指针</title>
-    <link href="https://lookwi.github.io/2020/03/18/golang-golang-7/"/>
-    <id>https://lookwi.github.io/2020/03/18/golang-golang-7/</id>
+    <link href="https://fei.dev/2020/03/18/golang-golang-7/"/>
+    <id>https://fei.dev/2020/03/18/golang-golang-7/</id>
     <published>2020-03-18T10:00:00.000Z</published>
     <updated>2020-03-25T06:40:42.000Z</updated>
     
@@ -87,21 +87,21 @@
     
     </summary>
     
-      <category term="Go" scheme="https://lookwi.github.io/categories/Go/"/>
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
     
-      <category term="Go入门系列" scheme="https://lookwi.github.io/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
     
     
-      <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
     
-      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
     
   </entry>
   
   <entry>
     <title>golang part2. 变量,类型,常量,函数，包</title>
-    <link href="https://lookwi.github.io/2020/03/18/golang-golang-4/"/>
-    <id>https://lookwi.github.io/2020/03/18/golang-golang-4/</id>
+    <link href="https://fei.dev/2020/03/18/golang-golang-4/"/>
+    <id>https://fei.dev/2020/03/18/golang-golang-4/</id>
     <published>2020-03-18T09:00:00.000Z</published>
     <updated>2020-03-25T06:40:42.000Z</updated>
     
@@ -118,21 +118,21 @@
     
     </summary>
     
-      <category term="Go" scheme="https://lookwi.github.io/categories/Go/"/>
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
     
-      <category term="Go入门系列" scheme="https://lookwi.github.io/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
     
     
-      <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
     
-      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
     
   </entry>
   
   <entry>
     <title>汇编指令整理</title>
-    <link href="https://lookwi.github.io/2020/01/15/asm-%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/"/>
-    <id>https://lookwi.github.io/2020/01/15/asm-汇编指令整理/</id>
+    <link href="https://fei.dev/2020/01/15/asm-%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/"/>
+    <id>https://fei.dev/2020/01/15/asm-汇编指令整理/</id>
     <published>2020-01-14T16:00:00.000Z</published>
     <updated>2020-01-14T16:45:47.000Z</updated>
     
@@ -149,19 +149,19 @@
     
     </summary>
     
-      <category term="ASM" scheme="https://lookwi.github.io/categories/ASM/"/>
+      <category term="ASM" scheme="https://fei.dev/categories/ASM/"/>
     
     
-      <category term="asm" scheme="https://lookwi.github.io/tags/asm/"/>
+      <category term="asm" scheme="https://fei.dev/tags/asm/"/>
     
-      <category term="汇编" scheme="https://lookwi.github.io/tags/%E6%B1%87%E7%BC%96/"/>
+      <category term="汇编" scheme="https://fei.dev/tags/%E6%B1%87%E7%BC%96/"/>
     
   </entry>
   
   <entry>
     <title>MicroService Part.1, 认识Go-Micro</title>
-    <link href="https://lookwi.github.io/2019/07/11/go-micro-part-1/"/>
-    <id>https://lookwi.github.io/2019/07/11/go-micro-part-1/</id>
+    <link href="https://fei.dev/2019/07/11/go-micro-part-1/"/>
+    <id>https://fei.dev/2019/07/11/go-micro-part-1/</id>
     <published>2019-07-10T22:05:27.000Z</published>
     <updated>2020-03-25T06:40:42.000Z</updated>
     
@@ -177,21 +177,21 @@
     
     </summary>
     
-      <category term="Go" scheme="https://lookwi.github.io/categories/Go/"/>
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
     
-      <category term="go-micro" scheme="https://lookwi.github.io/categories/Go/go-micro/"/>
+      <category term="go-micro" scheme="https://fei.dev/categories/Go/go-micro/"/>
     
     
-      <category term="go-micro" scheme="https://lookwi.github.io/tags/go-micro/"/>
+      <category term="go-micro" scheme="https://fei.dev/tags/go-micro/"/>
     
-      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
     
   </entry>
   
   <entry>
     <title>Golang Part.2, 语法第一步 + 程序员的一小步</title>
-    <link href="https://lookwi.github.io/2019/07/11/golang-golang-3/"/>
-    <id>https://lookwi.github.io/2019/07/11/golang-golang-3/</id>
+    <link href="https://fei.dev/2019/07/11/golang-golang-3/"/>
+    <id>https://fei.dev/2019/07/11/golang-golang-3/</id>
     <published>2019-07-10T22:05:27.000Z</published>
     <updated>2020-03-25T06:40:42.000Z</updated>
     
@@ -208,21 +208,21 @@
     
     </summary>
     
-      <category term="Go" scheme="https://lookwi.github.io/categories/Go/"/>
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
     
-      <category term="Go入门系列" scheme="https://lookwi.github.io/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
     
     
-      <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
     
-      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
     
   </entry>
   
   <entry>
     <title>Golang 安装和配置</title>
-    <link href="https://lookwi.github.io/2019/07/10/golang-golang-2/"/>
-    <id>https://lookwi.github.io/2019/07/10/golang-golang-2/</id>
+    <link href="https://fei.dev/2019/07/10/golang-golang-2/"/>
+    <id>https://fei.dev/2019/07/10/golang-golang-2/</id>
     <published>2019-07-09T22:05:27.000Z</published>
     <updated>2020-03-25T06:40:42.000Z</updated>
     
@@ -240,21 +240,21 @@
     
     </summary>
     
-      <category term="Go" scheme="https://lookwi.github.io/categories/Go/"/>
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
     
-      <category term="Go入门系列" scheme="https://lookwi.github.io/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
     
     
-      <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
     
-      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
     
   </entry>
   
   <entry>
     <title>C语言汇编解释-1</title>
-    <link href="https://lookwi.github.io/2019/03/31/clang-cinasm-1/"/>
-    <id>https://lookwi.github.io/2019/03/31/clang-cinasm-1/</id>
+    <link href="https://fei.dev/2019/03/31/clang-cinasm-1/"/>
+    <id>https://fei.dev/2019/03/31/clang-cinasm-1/</id>
     <published>2019-03-30T22:05:27.000Z</published>
     <updated>2019-05-13T14:57:20.000Z</updated>
     
@@ -270,21 +270,21 @@
     
     </summary>
     
-      <category term="C" scheme="https://lookwi.github.io/categories/C/"/>
+      <category term="C" scheme="https://fei.dev/categories/C/"/>
     
     
-      <category term="汇编" scheme="https://lookwi.github.io/tags/%E6%B1%87%E7%BC%96/"/>
+      <category term="汇编" scheme="https://fei.dev/tags/%E6%B1%87%E7%BC%96/"/>
     
-      <category term="clang" scheme="https://lookwi.github.io/tags/clang/"/>
+      <category term="clang" scheme="https://fei.dev/tags/clang/"/>
     
-      <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
     
   </entry>
   
   <entry>
     <title>Golang Part.1 包管理器</title>
-    <link href="https://lookwi.github.io/2019/03/31/golang-golang-1/"/>
-    <id>https://lookwi.github.io/2019/03/31/golang-golang-1/</id>
+    <link href="https://fei.dev/2019/03/31/golang-golang-1/"/>
+    <id>https://fei.dev/2019/03/31/golang-golang-1/</id>
     <published>2019-03-30T22:05:27.000Z</published>
     <updated>2020-03-25T06:40:43.000Z</updated>
     
@@ -301,21 +301,21 @@
     
     </summary>
     
-      <category term="Go" scheme="https://lookwi.github.io/categories/Go/"/>
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
     
-      <category term="Go入门系列" scheme="https://lookwi.github.io/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
     
     
-      <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
     
-      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
     
   </entry>
   
   <entry>
     <title>打造高效的PHP工作环境</title>
-    <link href="https://lookwi.github.io/2016/01/01/PHP-%E6%89%93%E9%80%A0%E9%AB%98%E6%95%88%E7%9A%84PHP%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83/"/>
-    <id>https://lookwi.github.io/2016/01/01/PHP-打造高效的PHP工作环境/</id>
+    <link href="https://fei.dev/2016/01/01/PHP-%E6%89%93%E9%80%A0%E9%AB%98%E6%95%88%E7%9A%84PHP%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83/"/>
+    <id>https://fei.dev/2016/01/01/PHP-打造高效的PHP工作环境/</id>
     <published>2016-01-01T14:05:27.000Z</published>
     <updated>2019-04-02T13:16:02.000Z</updated>
     
@@ -331,16 +331,16 @@
     
     </summary>
     
-      <category term="PHP" scheme="https://lookwi.github.io/categories/PHP/"/>
+      <category term="PHP" scheme="https://fei.dev/categories/PHP/"/>
     
     
-      <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
     
-      <category term="PHP" scheme="https://lookwi.github.io/tags/PHP/"/>
+      <category term="PHP" scheme="https://fei.dev/tags/PHP/"/>
     
-      <category term="Homebrew" scheme="https://lookwi.github.io/tags/Homebrew/"/>
+      <category term="Homebrew" scheme="https://fei.dev/tags/Homebrew/"/>
     
-      <category term="Proxy" scheme="https://lookwi.github.io/tags/Proxy/"/>
+      <category term="Proxy" scheme="https://fei.dev/tags/Proxy/"/>
     
   </entry>
   
