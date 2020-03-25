@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lookwi.github.io/"/>
-  <updated>2020-03-25T06:35:55.000Z</updated>
+  <updated>2020-03-25T06:40:42.000Z</updated>
   <id>https://lookwi.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lookwi.github.io/2020/03/18/golang-golang-6/"/>
     <id>https://lookwi.github.io/2020/03/18/golang-golang-6/</id>
     <published>2020-03-18T10:00:00.000Z</published>
-    <updated>2020-03-25T06:35:55.000Z</updated>
+    <updated>2020-03-25T06:40:42.000Z</updated>
     
     <summary type="html">
     
@@ -42,7 +42,7 @@
     
       <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
     
-      <category term="golang" scheme="https://lookwi.github.io/tags/golang/"/>
+      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
     
   </entry>
   
@@ -51,7 +51,7 @@
     <link href="https://lookwi.github.io/2020/03/18/golang-golang-5/"/>
     <id>https://lookwi.github.io/2020/03/18/golang-golang-5/</id>
     <published>2020-03-18T10:00:00.000Z</published>
-    <updated>2020-03-25T04:19:35.000Z</updated>
+    <updated>2020-03-25T06:40:42.000Z</updated>
     
     <summary type="html">
     
@@ -72,7 +72,7 @@
     
       <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
     
-      <category term="golang" scheme="https://lookwi.github.io/tags/golang/"/>
+      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
     
   </entry>
   
@@ -81,7 +81,7 @@
     <link href="https://lookwi.github.io/2020/03/18/golang-golang-7/"/>
     <id>https://lookwi.github.io/2020/03/18/golang-golang-7/</id>
     <published>2020-03-18T10:00:00.000Z</published>
-    <updated>2020-03-25T04:21:10.000Z</updated>
+    <updated>2020-03-25T06:40:42.000Z</updated>
     
     <summary type="html">
     
@@ -94,7 +94,7 @@
     
       <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
     
-      <category term="golang" scheme="https://lookwi.github.io/tags/golang/"/>
+      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
     
   </entry>
   
@@ -103,7 +103,7 @@
     <link href="https://lookwi.github.io/2020/03/18/golang-golang-4/"/>
     <id>https://lookwi.github.io/2020/03/18/golang-golang-4/</id>
     <published>2020-03-18T09:00:00.000Z</published>
-    <updated>2020-03-18T14:36:38.000Z</updated>
+    <updated>2020-03-25T06:40:42.000Z</updated>
     
     <summary type="html">
     
@@ -125,7 +125,7 @@
     
       <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
     
-      <category term="golang" scheme="https://lookwi.github.io/tags/golang/"/>
+      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
     
   </entry>
   
@@ -163,7 +163,7 @@
     <link href="https://lookwi.github.io/2019/07/11/go-micro-part-1/"/>
     <id>https://lookwi.github.io/2019/07/11/go-micro-part-1/</id>
     <published>2019-07-10T22:05:27.000Z</published>
-    <updated>2019-07-21T09:19:29.000Z</updated>
+    <updated>2020-03-25T06:40:42.000Z</updated>
     
     <summary type="html">
     
@@ -182,9 +182,9 @@
       <category term="go-micro" scheme="https://lookwi.github.io/categories/Go/go-micro/"/>
     
     
-      <category term="golang" scheme="https://lookwi.github.io/tags/golang/"/>
-    
       <category term="go-micro" scheme="https://lookwi.github.io/tags/go-micro/"/>
+    
+      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
     
   </entry>
   
@@ -193,7 +193,7 @@
     <link href="https://lookwi.github.io/2019/07/11/golang-golang-3/"/>
     <id>https://lookwi.github.io/2019/07/11/golang-golang-3/</id>
     <published>2019-07-10T22:05:27.000Z</published>
-    <updated>2019-07-21T09:09:02.000Z</updated>
+    <updated>2020-03-25T06:40:42.000Z</updated>
     
     <summary type="html">
     
@@ -215,7 +215,7 @@
     
       <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
     
-      <category term="golang" scheme="https://lookwi.github.io/tags/golang/"/>
+      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
     
   </entry>
   
@@ -224,7 +224,7 @@
     <link href="https://lookwi.github.io/2019/07/10/golang-golang-2/"/>
     <id>https://lookwi.github.io/2019/07/10/golang-golang-2/</id>
     <published>2019-07-09T22:05:27.000Z</published>
-    <updated>2019-07-11T15:06:10.000Z</updated>
+    <updated>2020-03-25T06:40:42.000Z</updated>
     
     <summary type="html">
     
@@ -247,7 +247,7 @@
     
       <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
     
-      <category term="golang" scheme="https://lookwi.github.io/tags/golang/"/>
+      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
     
   </entry>
   
@@ -286,7 +286,7 @@
     <link href="https://lookwi.github.io/2019/03/31/golang-golang-1/"/>
     <id>https://lookwi.github.io/2019/03/31/golang-golang-1/</id>
     <published>2019-03-30T22:05:27.000Z</published>
-    <updated>2019-07-11T15:05:31.000Z</updated>
+    <updated>2020-03-25T06:40:43.000Z</updated>
     
     <summary type="html">
     
@@ -308,7 +308,7 @@
     
       <category term="Mac" scheme="https://lookwi.github.io/tags/Mac/"/>
     
-      <category term="golang" scheme="https://lookwi.github.io/tags/golang/"/>
+      <category term="Golang" scheme="https://lookwi.github.io/tags/Golang/"/>
     
   </entry>
   

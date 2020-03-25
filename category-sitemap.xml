@@ -22,13 +22,6 @@
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/categories/Go/go-micro/</loc>
-        <lastmod>2019-07-21T09:19:29.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://lookwi.github.io/categories/ASM/</loc>
         <lastmod>2020-01-14T16:45:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -36,15 +29,22 @@
     </url>
 
     <url>
+        <loc>https://lookwi.github.io/categories/Go/go-micro/</loc>
+        <lastmod>2020-03-25T06:40:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://lookwi.github.io/categories/Go/</loc>
-        <lastmod>2020-03-25T06:35:55.000Z</lastmod>
+        <lastmod>2020-03-25T06:40:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://lookwi.github.io/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/</loc>
-        <lastmod>2020-03-25T06:35:55.000Z</lastmod>
+        <lastmod>2020-03-25T06:40:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

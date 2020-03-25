@@ -8,24 +8,32 @@
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/2020/03/18/golang-golang-6/</loc>
-        <lastmod>2020-03-25T06:35:55.000Z</lastmod>
+        <loc>https://lookwi.github.io/2019/03/31/golang-golang-1/</loc>
+        <lastmod>2020-03-25T06:40:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/2020/03/18/golang-golang-7/</loc>
-        <lastmod>2020-03-25T04:21:10.000Z</lastmod>
+        <loc>https://lookwi.github.io/2019/07/11/go-micro-part-1/</loc>
+        <lastmod>2020-03-25T06:40:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://lookwi.github.io/2020/03/18/golang-golang-5/</loc>
-        <lastmod>2020-03-25T04:19:35.000Z</lastmod>
+        <loc>https://lookwi.github.io/2019/07/10/golang-golang-2/</loc>
+        <lastmod>2020-03-25T06:40:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lookwi.github.io/2019/07/11/golang-golang-3/</loc>
+        <lastmod>2020-03-25T06:40:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,7 +41,31 @@
 
     <url>
         <loc>https://lookwi.github.io/2020/03/18/golang-golang-4/</loc>
-        <lastmod>2020-03-18T14:36:38.000Z</lastmod>
+        <lastmod>2020-03-25T06:40:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lookwi.github.io/2020/03/18/golang-golang-6/</loc>
+        <lastmod>2020-03-25T06:40:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lookwi.github.io/2020/03/18/golang-golang-5/</loc>
+        <lastmod>2020-03-25T06:40:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lookwi.github.io/2020/03/18/golang-golang-7/</loc>
+        <lastmod>2020-03-25T06:40:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -42,38 +74,6 @@
     <url>
         <loc>https://lookwi.github.io/2020/01/15/asm-%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</loc>
         <lastmod>2020-01-14T16:45:47.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://lookwi.github.io/2019/07/11/go-micro-part-1/</loc>
-        <lastmod>2019-07-21T09:19:29.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://lookwi.github.io/2019/07/11/golang-golang-3/</loc>
-        <lastmod>2019-07-21T09:09:02.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://lookwi.github.io/2019/07/10/golang-golang-2/</loc>
-        <lastmod>2019-07-11T15:06:10.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://lookwi.github.io/2019/03/31/golang-golang-1/</loc>
-        <lastmod>2019-07-11T15:05:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
