@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fei.dev/"/>
-  <updated>2020-03-25T06:40:42.000Z</updated>
+  <updated>2020-03-27T16:31:26.000Z</updated>
   <id>https://fei.dev/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>golang part3. 协程，信道，select, mutex</title>
+    <link href="https://fei.dev/2020/03/28/golang-golang-8/"/>
+    <id>https://fei.dev/2020/03/28/golang-golang-8/</id>
+    <published>2020-03-27T16:30:00.000Z</published>
+    <updated>2020-03-27T16:31:26.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
+    
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
+    
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
+    
+  </entry>
   
   <entry>
     <title>golang part2. 数组，切片，Map, 字符串</title>

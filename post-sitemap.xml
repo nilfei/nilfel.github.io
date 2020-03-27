@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://fei.dev/2020/03/28/golang-golang-8/</loc>
+        <lastmod>2020-03-27T16:31:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://fei.dev/2020/03/18/golang-golang-7/</loc>
         <lastmod>2020-03-27T16:18:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
