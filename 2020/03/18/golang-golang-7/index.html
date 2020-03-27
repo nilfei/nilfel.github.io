@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="日志">
+  <meta name="description" content="结构，方法, 指针12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910">
 <meta name="keywords" content="Mac,Golang">
 <meta property="og:type" content="article">
 <meta property="og:title" content="golang part2. 结构，方法，接口, 指针">
 <meta property="og:url" content="https://fei.dev/2020/03/18/golang-golang-7/index.html">
 <meta property="og:site_name" content="明风的小站">
-<meta property="og:description" content="日志">
+<meta property="og:description" content="结构，方法, 指针12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-25T06:40:42.000Z">
+<meta property="og:updated_time" content="2020-03-27T16:18:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="golang part2. 结构，方法，接口, 指针">
-<meta name="twitter:description" content="日志">
+<meta name="twitter:description" content="结构，方法, 指针12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910">
 
 
 
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-25 14:40:42" itemprop="dateModified" datetime="2020-03-25T14:40:42+08:00">2020-03-25</time>
+                <time title="修改时间：2020-03-28 00:18:46" itemprop="dateModified" datetime="2020-03-28T00:18:46+08:00">2020-03-28</time>
               
             
           </span>
@@ -492,7 +492,8 @@
       
 
       
-        
+        <h1 id="结构，方法-指针"><a href="#结构，方法-指针" class="headerlink" title="结构，方法, 指针"></a>结构，方法, 指针</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;encoding/json&quot;</span><br><span class="line">	&quot;errors&quot;</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 接口</span><br><span class="line">type SoftDelete interface &#123;</span><br><span class="line">	delete(id uint64) (bool, error)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type Base struct &#123;</span><br><span class="line">	// 声明ID 类型int64</span><br><span class="line">	// ``包裹的是 Tag注释 由 reflection 反射获取</span><br><span class="line">	// 序列化时 json 为id, omitempty 可以为空</span><br><span class="line">	ID uint64 `json:&quot;id,omitempty&quot;`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 声明一个User 结构体</span><br><span class="line">type User struct &#123;</span><br><span class="line">	// 结构体嵌套</span><br><span class="line">	Base</span><br><span class="line">	Username string `json:&quot;username,omitempty&quot;`</span><br><span class="line">	// 非导出字段</span><br><span class="line">	// 非user包 无法访问该属性</span><br><span class="line">	password string `json:&quot;password,omitempty&quot;`</span><br><span class="line"></span><br><span class="line">	// 结构体嵌套</span><br><span class="line">	UserAddress []UserAddress `json:&quot;address,omitempty&quot;`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//</span><br><span class="line">type UserAddress struct &#123;</span><br><span class="line">	Base</span><br><span class="line">	PhoneNumber string  `json:&quot;phone_number,omitempty&quot;`</span><br><span class="line">	Address     string  `json:&quot;address,omitempty&quot;`</span><br><span class="line">	Lat         float64 `json:&quot;lat,omitempty&quot;`</span><br><span class="line">	Lon         float64 `json:&quot;lat,omitempty&quot;`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 值方法</span><br><span class="line">func (us User) delete(id uint64) (bool, error) &#123;</span><br><span class="line">	if id &gt; 0 &#123;</span><br><span class="line">		us.ID = 0</span><br><span class="line">		us.Username = &quot;&quot;</span><br><span class="line">		fmt.Println(&quot;正确的ID已删除&quot;)</span><br><span class="line">		return true, nil</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(&quot;错误的ID，无法删除&quot;)</span><br><span class="line">	return false, errors.New(&quot;错误的ID，无法删除&quot;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 指针 方法</span><br><span class="line">func (uad *UserAddress) delete(id uint64) (bool, error) &#123;</span><br><span class="line">	if id &gt; 0 &#123;</span><br><span class="line">		uad.ID = 0</span><br><span class="line">		uad.Address = &quot;&quot;</span><br><span class="line">		fmt.Println(&quot;正确的ID已删除&quot;)</span><br><span class="line">		return true, nil</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(&quot;错误的ID，无法删除&quot;)</span><br><span class="line">	return false, errors.New(&quot;错误的ID，无法删除&quot;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	var user User</span><br><span class="line">	user.ID = 1</span><br><span class="line">	user.Username = &quot;admin&quot;</span><br><span class="line">	// 本包内可以访问数据</span><br><span class="line">	user.password = &quot;123123&quot;</span><br><span class="line">	var userAddress = make([]UserAddress, 3, 10)</span><br><span class="line"></span><br><span class="line">	// var 方式设置结构体</span><br><span class="line">	var u UserAddress</span><br><span class="line">	u.ID = 1</span><br><span class="line">	u.PhoneNumber = &quot;1339222101&quot;</span><br><span class="line">	u.Address = &quot;湖北省武汉市江汉区新华路华南海鲜市场&quot;</span><br><span class="line">	u.Lat = 30.6179363100</span><br><span class="line">	u.Lon = 114.2626900300</span><br><span class="line"></span><br><span class="line">	userAddress = append(userAddress, u)</span><br><span class="line">	// 直接初始化结构体</span><br><span class="line">	userAddress = append(userAddress, UserAddress&#123;</span><br><span class="line">		// 嵌套结构体直接初始化，必须要给定结构体</span><br><span class="line">		Base:        Base&#123;ID: 2&#125;,</span><br><span class="line">		PhoneNumber: &quot;1339222101&quot;,</span><br><span class="line">		Address:     &quot;湖北省武汉市江汉区新华路华南海鲜市场&quot;,</span><br><span class="line">		Lat:         30.6179363100,</span><br><span class="line">		Lon:         114.2626900300,</span><br><span class="line">	&#125;)</span><br><span class="line">	// new 方式初始化</span><br><span class="line">	u2 := new(UserAddress)</span><br><span class="line">	u2.ID = 3</span><br><span class="line">	u.PhoneNumber = &quot;1339222101&quot;</span><br><span class="line">	u.Address = &quot;湖北省武汉市江汉区新华路华南海鲜市场&quot;</span><br><span class="line">	u.Lat = 30.6179363100</span><br><span class="line">	u.Lon = 114.2626900300</span><br><span class="line"></span><br><span class="line">	user.UserAddress = userAddress</span><br><span class="line">	fmt.Println(user)</span><br><span class="line">	fmt.Println()</span><br><span class="line">	fmt.Println()</span><br><span class="line">	marshal, _ := json.Marshal(user)</span><br><span class="line">	fmt.Println(string(marshal))</span><br><span class="line">	/**</span><br><span class="line">	&#123;</span><br><span class="line">	    &quot;id&quot;: 1,</span><br><span class="line">	    &quot;username&quot;: &quot;admin&quot;,</span><br><span class="line">	    &quot;address&quot;: [</span><br><span class="line">	        &#123;&#125;,</span><br><span class="line">	        &#123;&#125;,</span><br><span class="line">	        &#123;&#125;,</span><br><span class="line">	        &#123;</span><br><span class="line">	            &quot;id&quot;: 1,</span><br><span class="line">	            &quot;phone_number&quot;: &quot;1339222101&quot;,</span><br><span class="line">	            &quot;address&quot;: &quot;湖北省武汉市江汉区新华路华南海鲜市场&quot;</span><br><span class="line">	        &#125;,</span><br><span class="line">	        &#123;</span><br><span class="line">	            &quot;id&quot;: 2,</span><br><span class="line">	            &quot;phone_number&quot;: &quot;1339222101&quot;,</span><br><span class="line">	            &quot;address&quot;: &quot;湖北省武汉市江汉区新华路华南海鲜市场&quot;</span><br><span class="line">	        &#125;</span><br><span class="line">	    ]</span><br><span class="line">	&#125;</span><br><span class="line">	*/</span><br><span class="line"></span><br><span class="line">	// 输出时无password字段</span><br><span class="line"></span><br><span class="line">	b, err := u2.delete(0)</span><br><span class="line">	fmt.Println(&quot;u2 删除结果 &quot;, b, &quot;err 信息：&quot;, err)</span><br><span class="line"></span><br><span class="line">	fmt.Println(u2.ID)</span><br><span class="line">	//错误的ID，无法删除</span><br><span class="line">	//u2 删除结果  false err 信息： 错误的ID，无法删除</span><br><span class="line"></span><br><span class="line">	b, err = u2.delete(1)</span><br><span class="line">	fmt.Println(&quot;u2 删除结果 &quot;, b, &quot;err 信息：&quot;, err)</span><br><span class="line">	// 指针接受者则会变更内容</span><br><span class="line">	fmt.Println(u2)</span><br><span class="line">	//正确的ID已删除</span><br><span class="line">	//u2 删除结果  true err 信息： &lt;nil&gt;</span><br><span class="line"></span><br><span class="line">	b2, err := user.delete(0)</span><br><span class="line">	fmt.Println(&quot;user 删除结果 &quot;, b2, &quot;err 信息：&quot;, err)</span><br><span class="line">	bytes, err := json.Marshal(user)</span><br><span class="line">	fmt.Println(string(bytes))</span><br><span class="line"></span><br><span class="line">	b2, err = user.delete(1)</span><br><span class="line">	fmt.Println(&quot;user 删除结果 &quot;, b2, &quot;err 信息：&quot;, err)</span><br><span class="line">	bytes, err = json.Marshal(user)</span><br><span class="line">	fmt.Println(string(bytes))</span><br><span class="line">	// user.ID 并没有被重置</span><br><span class="line"></span><br><span class="line">	// 接口调用</span><br><span class="line">	var I1 SoftDelete = user</span><br><span class="line">	I1.delete(0)</span><br><span class="line">	I1.delete(1)</span><br><span class="line"></span><br><span class="line">	var I2 SoftDelete = u2</span><br><span class="line">	I2.delete(0)</span><br><span class="line">	I2.delete(1)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -586,8 +587,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -604,7 +614,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -723,6 +733,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#结构，方法-指针"><span class="nav-number">1.</span> <span class="nav-text">结构，方法, 指针</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

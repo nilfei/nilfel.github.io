@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://fei.dev/2020/03/18/golang-golang-7/</loc>
+        <lastmod>2020-03-27T16:18:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://fei.dev/2019/03/31/golang-golang-1/</loc>
         <lastmod>2020-03-25T06:40:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -32,14 +40,6 @@
     </url>
 
     <url>
-        <loc>https://fei.dev/2019/07/11/golang-golang-3/</loc>
-        <lastmod>2020-03-25T06:40:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://fei.dev/2020/03/18/golang-golang-4/</loc>
         <lastmod>2020-03-25T06:40:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -57,14 +57,6 @@
 
     <url>
         <loc>https://fei.dev/2020/03/18/golang-golang-5/</loc>
-        <lastmod>2020-03-25T06:40:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fei.dev/2020/03/18/golang-golang-7/</loc>
         <lastmod>2020-03-25T06:40:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

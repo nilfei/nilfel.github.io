@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://fei.dev/2020/03/18/golang-golang-7/</loc>
+    <lastmod>2020-03-27</lastmod>
+  </url>  <url>
     <loc>https://fei.dev/2019/03/31/golang-golang-1/</loc>
     <lastmod>2020-03-25</lastmod>
   </url>  <url>
@@ -10,9 +13,6 @@
     <loc>https://fei.dev/2019/07/10/golang-golang-2/</loc>
     <lastmod>2020-03-25</lastmod>
   </url>  <url>
-    <loc>https://fei.dev/2019/07/11/golang-golang-3/</loc>
-    <lastmod>2020-03-25</lastmod>
-  </url>  <url>
     <loc>https://fei.dev/2020/03/18/golang-golang-4/</loc>
     <lastmod>2020-03-25</lastmod>
   </url>  <url>
@@ -20,9 +20,6 @@
     <lastmod>2020-03-25</lastmod>
   </url>  <url>
     <loc>https://fei.dev/2020/03/18/golang-golang-5/</loc>
-    <lastmod>2020-03-25</lastmod>
-  </url>  <url>
-    <loc>https://fei.dev/2020/03/18/golang-golang-7/</loc>
     <lastmod>2020-03-25</lastmod>
   </url>  <url>
     <loc>https://fei.dev/2020/01/15/asm-%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</loc>
