@@ -53,14 +53,14 @@
 
     <url>
         <loc>https://fei.dev/tags/Mac/</loc>
-        <lastmod>2020-03-28T10:21:01.000Z</lastmod>
+        <lastmod>2020-03-28T10:43:03.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://fei.dev/tags/Golang/</loc>
-        <lastmod>2020-03-28T10:21:01.000Z</lastmod>
+        <lastmod>2020-03-28T10:43:03.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
