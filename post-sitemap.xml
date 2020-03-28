@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://fei.dev/2020/03/28/golang-golang-8/</loc>
+        <lastmod>2020-03-28T09:36:41.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://fei.dev/2020/03/28/go-micro-part-1-1/</loc>
         <lastmod>2020-03-27T16:48:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -50,14 +58,6 @@
     <url>
         <loc>https://fei.dev/2020/03/28/golang-golang-9/</loc>
         <lastmod>2020-03-27T16:41:44.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fei.dev/2020/03/28/golang-golang-8/</loc>
-        <lastmod>2020-03-27T16:31:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
