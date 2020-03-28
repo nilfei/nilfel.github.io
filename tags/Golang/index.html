@@ -96,25 +96,23 @@
 
 
 
-  <meta name="description" content="defer1234567891011121314151617181920212223242526272829303132333435363738package mainimport &amp;quot;fmt&amp;quot;func incA() int &amp;#123;	var A int	defer func() &amp;#123;		A++	&amp;#125;()	return A&amp;#125;func incB() (">
-<meta name="keywords" content="Mac,Golang">
-<meta property="og:type" content="article">
-<meta property="og:title" content="golang part3. defer, errors,panic, recover">
-<meta property="og:url" content="https://fei.dev/2020/03/28/golang-golang-9/index.html">
+  <meta name="description" content="日志">
+<meta property="og:type" content="website">
+<meta property="og:title" content="明风的小站">
+<meta property="og:url" content="https://fei.dev/tags/Golang/index.html">
 <meta property="og:site_name" content="明风的小站">
-<meta property="og:description" content="defer1234567891011121314151617181920212223242526272829303132333435363738package mainimport &amp;quot;fmt&amp;quot;func incA() int &amp;#123;	var A int	defer func() &amp;#123;		A++	&amp;#125;()	return A&amp;#125;func incB() (">
+<meta property="og:description" content="日志">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-28T10:45:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="golang part3. defer, errors,panic, recover">
-<meta name="twitter:description" content="defer1234567891011121314151617181920212223242526272829303132333435363738package mainimport &amp;quot;fmt&amp;quot;func incA() int &amp;#123;	var A int	defer func() &amp;#123;		A++	&amp;#125;()	return A&amp;#125;func incB() (">
+<meta name="twitter:title" content="明风的小站">
+<meta name="twitter:description" content="日志">
 
 
 
 
 
 
-  <link rel="canonical" href="https://fei.dev/2020/03/28/golang-golang-9/">
+  <link rel="canonical" href="https://fei.dev/tags/Golang/">
 
 
 
@@ -124,7 +122,7 @@
   };
 </script>
 
-  <title>golang part3. defer, errors,panic, recover | 明风的小站</title>
+  <title>标签: Golang | 明风的小站</title>
   
 
 
@@ -172,7 +170,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -231,7 +229,7 @@
         
         
           
-          <li class="menu-item menu-item-tags">
+          <li class="menu-item menu-item-tags menu-item-active">
 
     
     
@@ -353,210 +351,421 @@
           
             
 
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
           
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>Golang<small>标签</small>
+        </h1>
+      </div>
 
-  
-  
-  
-
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fei.dev/2020/03/28/golang-golang-9/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nilfei">
-      <meta itemprop="description" content="日志">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="明风的小站">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+          <a class="post-title-link" href="/2020/03/28/golang-golang-8/" itemprop="url">
+            
+              <span itemprop="name">golang part3. 协程，频道，select, WaitGroup && mutex</span>
+            
+          </a>
         
-          <h1 class="post-title" itemprop="name headline">golang part3. defer, errors,panic, recover
+      </h2>
 
-              
-            
-          </h1>
-        
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-28T00:30:00+08:00" content="2020-03-28">
+          03-28
+        </time>
+      </div>
 
-        <div class="post-meta">
-          <span class="post-time">
+    </header>
+  </article>
 
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-03-28 00:30:00 / 修改时间：18:45:29" itemprop="dateCreated datePublished" datetime="2020-03-28T00:30:00+08:00">2020-03-28</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Go/Go入门系列/" itemprop="url" rel="index"><span itemprop="name">Go入门系列</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
 
       
-      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2020/03/28/golang-golang-10/" itemprop="url">
+            
+              <span itemprop="name">golang part3. 反射，IO, net/http</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-28T00:30:00+08:00" content="2020-03-28">
+          03-28
+        </time>
+      </div>
+
+    </header>
+  </article>
+
 
       
-        <h1 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func incA() int &#123;</span><br><span class="line">	var A int</span><br><span class="line">	defer func() &#123;</span><br><span class="line">		A++</span><br><span class="line">	&#125;()</span><br><span class="line">	return A</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func incB() (B int64) &#123;</span><br><span class="line"></span><br><span class="line">	defer func() &#123;</span><br><span class="line">		B++</span><br><span class="line">	&#125;()</span><br><span class="line">	return B</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">1.defer是栈调用，后写的先执行</span><br><span class="line">2.defer的函数调用语句会在父函数调用后执行，但是用到的参数会在当时就执行得出</span><br><span class="line">*/</span><br><span class="line">func main() &#123;</span><br><span class="line">	fmt.Println(incA())</span><br><span class="line">	fmt.Println(incB())</span><br><span class="line">	fmt.Println(&quot;--------------------&quot;)</span><br><span class="line">	defer func() &#123;</span><br><span class="line">		fmt.Println(incA())</span><br><span class="line">	&#125;()</span><br><span class="line">	defer func() &#123;</span><br><span class="line">		defer func() &#123;</span><br><span class="line">			fmt.Println(incB())</span><br><span class="line">		&#125;()</span><br><span class="line">	&#125;()</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="errors-panic-recover"><a href="#errors-panic-recover" class="headerlink" title="errors,panic recover"></a>errors,panic recover</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;errors&quot;</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;os&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	fmt.Println(errors.New(&quot;你得罪了你的女朋友！&quot;))</span><br><span class="line">	fmt.Println(errors.New(&quot;你还一直不懂味！！！&quot;))</span><br><span class="line">	fmt.Println(errors.New(&quot;还是和往常一样在飞快的处理 err&quot;))</span><br><span class="line">	fmt.Println(&quot;你准备打开这本恋爱修炼手册&quot;)</span><br><span class="line">	f, err := os.Open(&quot;/恋爱修炼手册.txt&quot;)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(&quot;其实你并没有这本书&quot;)</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		fmt.Println(f.Name(), &quot;你打开了潘多拉魔盒&quot;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Println(errors.New(&quot;直到有一天，你的生活发生了改变&quot;))</span><br><span class="line"></span><br><span class="line">	fmt.Println(fmt.Errorf(&quot;你的女朋友问你，你是否还爱她. 你给出了答案： %s&quot;, &quot;你爱过大海，我爱过你&quot;))</span><br><span class="line">	fmt.Println(&quot;你在说这句话的时候，其实你已经准备好了向她求婚...&quot;)</span><br><span class="line">	defer func() &#123;</span><br><span class="line">		if r := recover(); r != nil &#123;</span><br><span class="line">			fmt.Println(&quot;醒醒吧，你没有女朋友，程序员哪来的女朋友&quot;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;()</span><br><span class="line">	fmt.Println(&quot;无法继续生活下去了&quot;)</span><br><span class="line">	panic(&quot;分手！！！&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2020/03/28/golang-golang-11/" itemprop="url">
+            
+              <span itemprop="name">golang part3. 调度器</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-28T00:30:00+08:00" content="2020-03-28">
+          03-28
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2020/03/28/golang-golang-12/" itemprop="url">
+            
+              <span itemprop="name">golang part3. 调度器</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-28T00:30:00+08:00" content="2020-03-28">
+          03-28
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2020/03/28/golang-golang-13/" itemprop="url">
+            
+              <span itemprop="name">golang part3. 内存分配</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-28T00:30:00+08:00" content="2020-03-28">
+          03-28
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2020/03/28/golang-golang-9/" itemprop="url">
+            
+              <span itemprop="name">golang part3. defer, errors,panic, recover</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-28T00:30:00+08:00" content="2020-03-28">
+          03-28
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2020/03/28/go-micro-part-1-1/" itemprop="url">
+            
+              <span itemprop="name">MicroService Part.1.1, 开启micro之路</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-28T00:00:00+08:00" content="2020-03-28">
+          03-28
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2020/03/18/golang-golang-6/" itemprop="url">
+            
+              <span itemprop="name">golang part2. 数组，切片，Map, 字符串</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-18T18:00:00+08:00" content="2020-03-18">
+          03-18
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2020/03/18/golang-golang-5/" itemprop="url">
+            
+              <span itemprop="name">golang part2. 断言，流程控制，运算</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-18T18:00:00+08:00" content="2020-03-18">
+          03-18
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2020/03/18/golang-golang-7/" itemprop="url">
+            
+              <span itemprop="name">golang part2. 结构，方法，接口, 指针</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-18T18:00:00+08:00" content="2020-03-18">
+          03-18
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2020/03/18/golang-golang-4/" itemprop="url">
+            
+              <span itemprop="name">golang part2. 变量,类型,常量,函数，包</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-18T17:00:00+08:00" content="2020-03-18">
+          03-18
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2019/07/11/go-micro-part-1/" itemprop="url">
+            
+              <span itemprop="name">MicroService Part.1, 认识Go-Micro</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-07-11T06:05:27+08:00" content="2019-07-11">
+          07-11
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2019/07/10/golang-golang-2/" itemprop="url">
+            
+              <span itemprop="name">Golang 安装和配置</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-07-10T06:05:27+08:00" content="2019-07-10">
+          07-10
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2019/03/31/golang-golang-1/" itemprop="url">
+            
+              <span itemprop="name">Golang Part.1 包管理器</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-03-31T06:05:27+08:00" content="2019-03-31">
+          03-31
+        </time>
+      </div>
+
+    </header>
+  </article>
+
 
       
     </div>
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Mac/" rel="tag"># Mac</a>
-          
-            <a href="/tags/Golang/" rel="tag"># Golang</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/03/28/go-micro-part-1-1/" rel="next" title="MicroService Part.1.1, 开启micro之路">
-                <i class="fa fa-chevron-left"></i> MicroService Part.1.1, 开启micro之路
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/28/golang-golang-13/" rel="prev" title="golang part3. 内存分配">
-                golang part3. 内存分配 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
   </div>
   
   
   
-  </article>
-
-
-  </div>
-
-
-          </div>
-          
 
   
 
 
+
+          </div>
+          
 
         </div>
         
@@ -576,17 +785,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -723,23 +923,6 @@
       </div>
 
       
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#defer"><span class="nav-number">1.</span> <span class="nav-text">defer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#errors-panic-recover"><span class="nav-number">2.</span> <span class="nav-text">errors,panic recover</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
 
       
 
@@ -872,10 +1055,6 @@
 
 
   
-  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
-<script src="/js/src/post-details.js?v=7.0.1"></script>
-
-
 
   
 
@@ -891,8 +1070,6 @@
 
   
 
-
-  
 
 
   
@@ -1246,7 +1423,7 @@
   <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script>
   
-    bookmark.scrollToMark('auto', "#更多");
+    bookmark.loadBookmark();
   
   </script>
 
