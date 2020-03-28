@@ -45,13 +45,6 @@
     </url>
 
     <url>
-        <loc>https://fei.dev/tags/go-micro/</loc>
-        <lastmod>2020-03-27T16:48:01.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://fei.dev/tags/Mac/</loc>
         <lastmod>2020-03-28T11:50:23.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -59,8 +52,15 @@
     </url>
 
     <url>
+        <loc>https://fei.dev/tags/go-micro/</loc>
+        <lastmod>2020-03-28T12:47:41.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://fei.dev/tags/Golang/</loc>
-        <lastmod>2020-03-28T11:50:23.000Z</lastmod>
+        <lastmod>2020-03-28T12:47:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
