@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fei.dev/"/>
-  <updated>2020-03-28T10:21:01.000Z</updated>
+  <updated>2020-03-29T09:30:30.000Z</updated>
   <id>https://fei.dev/</id>
   
   <author>
@@ -17,101 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>golang part3. 协程，频道，select, WaitGroup &amp;&amp; mutex</title>
-    <link href="https://fei.dev/2020/03/28/golang-golang-8/"/>
-    <id>https://fei.dev/2020/03/28/golang-golang-8/</id>
-    <published>2020-03-27T16:30:00.000Z</published>
-    <updated>2020-03-28T10:21:01.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;CSP&quot;&gt;&lt;a href=&quot;#CSP&quot; class=&quot;headerlink&quot; title=&quot;CSP&quot;&gt;&lt;/a&gt;CSP&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
-    
-    </summary>
-    
-      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
-    
-      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
-    
-    
-      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
-    
-      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>golang part3. 反射，IO, net/http</title>
-    <link href="https://fei.dev/2020/03/28/golang-golang-10/"/>
-    <id>https://fei.dev/2020/03/28/golang-golang-10/</id>
-    <published>2020-03-27T16:30:00.000Z</published>
-    <updated>2020-03-28T11:50:23.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;反射&quot;&gt;&lt;a href=&quot;#反射&quot; class=&quot;headerlink&quot; title=&quot;反射&quot;&gt;&lt;/a&gt;反射&lt;/h1&gt;&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
-    
-      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
-    
-    
-      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
-    
-      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>golang part3. defer, errors,panic, recover</title>
-    <link href="https://fei.dev/2020/03/28/golang-golang-9/"/>
-    <id>https://fei.dev/2020/03/28/golang-golang-9/</id>
-    <published>2020-03-27T16:30:00.000Z</published>
-    <updated>2020-03-28T10:45:29.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;defer&quot;&gt;&lt;a href=&quot;#defer&quot; class=&quot;headerlink&quot; title=&quot;defer&quot;&gt;&lt;/a&gt;defer&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
-    
-    </summary>
-    
-      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
-    
-      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
-    
-    
-      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
-    
-      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
-    
-  </entry>
-  
-  <entry>
     <title>MicroService Part.1.1, 开启micro之路</title>
     <link href="https://fei.dev/2020/03/28/go-micro-part-1-1/"/>
     <id>https://fei.dev/2020/03/28/go-micro-part-1-1/</id>
-    <published>2020-03-27T16:00:00.000Z</published>
-    <updated>2020-03-29T09:25:25.000Z</updated>
+    <published>2020-03-28T04:00:00.000Z</published>
+    <updated>2020-03-29T09:30:30.000Z</updated>
     
     <summary type="html">
     
@@ -130,130 +40,9 @@
       <category term="go-micro" scheme="https://fei.dev/categories/Go/go-micro/"/>
     
     
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
+    
       <category term="go-micro" scheme="https://fei.dev/tags/go-micro/"/>
-    
-      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>golang part2. 数组，切片，Map, 字符串</title>
-    <link href="https://fei.dev/2020/03/18/golang-golang-6/"/>
-    <id>https://fei.dev/2020/03/18/golang-golang-6/</id>
-    <published>2020-03-18T10:00:00.000Z</published>
-    <updated>2020-03-25T06:40:42.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
-    
-      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
-    
-    
-      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
-    
-      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>golang part2. 断言，流程控制，运算</title>
-    <link href="https://fei.dev/2020/03/18/golang-golang-5/"/>
-    <id>https://fei.dev/2020/03/18/golang-golang-5/</id>
-    <published>2020-03-18T10:00:00.000Z</published>
-    <updated>2020-03-25T06:40:42.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;断言&quot;&gt;&lt;a href=&quot;#断言&quot; class=&quot;headerlink&quot; title=&quot;断言&quot;&gt;&lt;/a&gt;断言&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
-    
-      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
-    
-    
-      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
-    
-      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>golang part2. 结构，方法，接口, 指针</title>
-    <link href="https://fei.dev/2020/03/18/golang-golang-7/"/>
-    <id>https://fei.dev/2020/03/18/golang-golang-7/</id>
-    <published>2020-03-18T10:00:00.000Z</published>
-    <updated>2020-03-27T16:18:46.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;结构，方法-指针&quot;&gt;&lt;a href=&quot;#结构，方法-指针&quot; class=&quot;headerlink&quot; title=&quot;结构，方法, 指针&quot;&gt;&lt;/a&gt;结构，方法, 指针&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
-    
-    </summary>
-    
-      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
-    
-      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
-    
-    
-      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
-    
-      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>golang part2. 变量,类型,常量,函数，包</title>
-    <link href="https://fei.dev/2020/03/18/golang-golang-4/"/>
-    <id>https://fei.dev/2020/03/18/golang-golang-4/</id>
-    <published>2020-03-18T09:00:00.000Z</published>
-    <updated>2020-03-25T06:40:42.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;code&gt;TL;DR&lt;/code&gt;&lt;/p&gt;
-&lt;h1 id=&quot;变量&quot;&gt;&lt;a href=&quot;#变量&quot; class=&quot;headerlink&quot; title=&quot;变量&quot;&gt;&lt;/a&gt;变量&lt;/h1&gt;&lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
-    
-      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
-    
-    
-      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
-    
-      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
     
   </entry>
   
@@ -291,7 +80,7 @@
     <link href="https://fei.dev/2019/07/11/go-micro-part-1/"/>
     <id>https://fei.dev/2019/07/11/go-micro-part-1/</id>
     <published>2019-07-10T22:05:27.000Z</published>
-    <updated>2020-03-25T06:40:42.000Z</updated>
+    <updated>2020-03-29T09:30:36.000Z</updated>
     
     <summary type="html">
     
@@ -310,41 +99,9 @@
       <category term="go-micro" scheme="https://fei.dev/categories/Go/go-micro/"/>
     
     
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
+    
       <category term="go-micro" scheme="https://fei.dev/tags/go-micro/"/>
-    
-      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Golang 安装和配置</title>
-    <link href="https://fei.dev/2019/07/10/golang-golang-2/"/>
-    <id>https://fei.dev/2019/07/10/golang-golang-2/</id>
-    <published>2019-07-09T22:05:27.000Z</published>
-    <updated>2020-03-25T06:40:42.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;code&gt;TL;DR&lt;/code&gt;&lt;/p&gt;
-&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;Mac 安装&lt;br&gt;brew install
-        
-      
-    
-    </summary>
-    
-      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
-    
-      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
-    
-    
-      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
-    
-      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
     
   </entry>
   
@@ -372,7 +129,37 @@
     
       <category term="汇编" scheme="https://fei.dev/tags/%E6%B1%87%E7%BC%96/"/>
     
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
+    
       <category term="clang" scheme="https://fei.dev/tags/clang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang part3. 反射，IO, net/http</title>
+    <link href="https://fei.dev/2018/02/13/golang-golang-10/"/>
+    <id>https://fei.dev/2018/02/13/golang-golang-10/</id>
+    <published>2018-02-12T16:30:00.000Z</published>
+    <updated>2018-02-13T09:34:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;反射&quot;&gt;&lt;a href=&quot;#反射&quot; class=&quot;headerlink&quot; title=&quot;反射&quot;&gt;&lt;/a&gt;反射&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
+    
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
     
       <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
     
@@ -380,10 +167,10 @@
   
   <entry>
     <title>Golang Part.1 包管理器</title>
-    <link href="https://fei.dev/2019/03/31/golang-golang-1/"/>
-    <id>https://fei.dev/2019/03/31/golang-golang-1/</id>
-    <published>2019-03-30T22:05:27.000Z</published>
-    <updated>2020-03-25T06:40:43.000Z</updated>
+    <link href="https://fei.dev/2018/02/13/golang-golang-1/"/>
+    <id>https://fei.dev/2018/02/13/golang-golang-1/</id>
+    <published>2018-02-12T16:30:00.000Z</published>
+    <updated>2018-02-13T09:34:46.000Z</updated>
     
     <summary type="html">
     
@@ -403,18 +190,18 @@
       <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
     
     
-      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
-    
       <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
+    
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
     
   </entry>
   
   <entry>
-    <title>打造高效的工作环境</title>
-    <link href="https://fei.dev/2016/01/01/PHP-%E7%8E%AF%E5%A2%83/"/>
-    <id>https://fei.dev/2016/01/01/PHP-环境/</id>
-    <published>2016-01-01T14:05:27.000Z</published>
-    <updated>2020-03-29T09:25:12.000Z</updated>
+    <title>Golang 安装和配置</title>
+    <link href="https://fei.dev/2018/02/13/golang-golang-2/"/>
+    <id>https://fei.dev/2018/02/13/golang-golang-2/</id>
+    <published>2018-02-12T16:30:00.000Z</published>
+    <updated>2018-02-13T09:34:46.000Z</updated>
     
     <summary type="html">
     
@@ -422,20 +209,203 @@
       
         
         
-          &lt;p&gt;用了一段时间的Mac系统， 记录一下使用心得&lt;br&gt;在使用大多数环境时，为了偷懒更加偏向于Homebrew的依赖安装，省去了自己编译的方法，所以&lt;br&gt;在开始的时候呢，首先说一下翻墙环境&lt;br&gt;我使用的是SS + kcptun
+          &lt;p&gt;&lt;code&gt;TL;DR&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;Mac 安装&lt;br&gt;brew install
         
       
     
     </summary>
     
-      <category term="Mac" scheme="https://fei.dev/categories/Mac/"/>
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
     
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
     
       <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
     
-      <category term="Homebrew" scheme="https://fei.dev/tags/Homebrew/"/>
+  </entry>
+  
+  <entry>
+    <title>golang part2. 变量,类型,常量,函数，包</title>
+    <link href="https://fei.dev/2018/02/13/golang-golang-4/"/>
+    <id>https://fei.dev/2018/02/13/golang-golang-4/</id>
+    <published>2018-02-12T16:30:00.000Z</published>
+    <updated>2018-02-13T09:34:46.000Z</updated>
     
-      <category term="Proxy" scheme="https://fei.dev/tags/Proxy/"/>
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;code&gt;TL;DR&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&quot;变量&quot;&gt;&lt;a href=&quot;#变量&quot; class=&quot;headerlink&quot; title=&quot;变量&quot;&gt;&lt;/a&gt;变量&lt;/h1&gt;&lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
+    
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
+    
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang part2. 断言，流程控制，运算</title>
+    <link href="https://fei.dev/2018/02/13/golang-golang-5/"/>
+    <id>https://fei.dev/2018/02/13/golang-golang-5/</id>
+    <published>2018-02-12T16:30:00.000Z</published>
+    <updated>2018-02-13T09:34:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;断言&quot;&gt;&lt;a href=&quot;#断言&quot; class=&quot;headerlink&quot; title=&quot;断言&quot;&gt;&lt;/a&gt;断言&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
+    
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
+    
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang part2. 数组，切片，Map, 字符串</title>
+    <link href="https://fei.dev/2018/02/13/golang-golang-6/"/>
+    <id>https://fei.dev/2018/02/13/golang-golang-6/</id>
+    <published>2018-02-12T16:30:00.000Z</published>
+    <updated>2018-02-13T09:34:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
+    
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
+    
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang part3. defer, errors,panic, recover</title>
+    <link href="https://fei.dev/2018/02/13/golang-golang-9/"/>
+    <id>https://fei.dev/2018/02/13/golang-golang-9/</id>
+    <published>2018-02-12T16:30:00.000Z</published>
+    <updated>2018-02-13T09:34:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;defer&quot;&gt;&lt;a href=&quot;#defer&quot; class=&quot;headerlink&quot; title=&quot;defer&quot;&gt;&lt;/a&gt;defer&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
+    
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
+    
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang part2. 结构，方法，接口, 指针</title>
+    <link href="https://fei.dev/2018/02/13/golang-golang-7/"/>
+    <id>https://fei.dev/2018/02/13/golang-golang-7/</id>
+    <published>2018-02-12T16:30:00.000Z</published>
+    <updated>2018-02-13T09:34:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;结构，方法-指针&quot;&gt;&lt;a href=&quot;#结构，方法-指针&quot; class=&quot;headerlink&quot; title=&quot;结构，方法, 指针&quot;&gt;&lt;/a&gt;结构，方法, 指针&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
+    
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
+    
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang part3. 协程，频道，select, WaitGroup &amp;&amp; mutex</title>
+    <link href="https://fei.dev/2018/02/13/golang-golang-8/"/>
+    <id>https://fei.dev/2018/02/13/golang-golang-8/</id>
+    <published>2018-02-12T16:30:00.000Z</published>
+    <updated>2018-02-13T09:34:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CSP&quot;&gt;&lt;a href=&quot;#CSP&quot; class=&quot;headerlink&quot; title=&quot;CSP&quot;&gt;&lt;/a&gt;CSP&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
+    
+      <category term="Go入门系列" scheme="https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
+    
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
     
   </entry>
   

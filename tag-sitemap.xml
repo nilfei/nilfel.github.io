@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>https://fei.dev/tags/Mac/</loc>
+        <lastmod>2019-05-13T14:57:20.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://fei.dev/tags/clang/</loc>
         <lastmod>2019-05-13T14:57:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -24,36 +31,15 @@
     </url>
 
     <url>
-        <loc>https://fei.dev/tags/Mac/</loc>
-        <lastmod>2020-03-29T09:25:12.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://fei.dev/tags/Homebrew/</loc>
-        <lastmod>2020-03-29T09:25:12.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://fei.dev/tags/Proxy/</loc>
-        <lastmod>2020-03-29T09:25:12.000Z</lastmod>
+        <loc>https://fei.dev/tags/Golang/</loc>
+        <lastmod>2020-03-29T09:30:36.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://fei.dev/tags/go-micro/</loc>
-        <lastmod>2020-03-29T09:25:25.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://fei.dev/tags/Golang/</loc>
-        <lastmod>2020-03-29T09:25:25.000Z</lastmod>
+        <lastmod>2020-03-29T09:30:36.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
