@@ -111,7 +111,7 @@
     <link href="https://fei.dev/2020/03/28/go-micro-part-1-1/"/>
     <id>https://fei.dev/2020/03/28/go-micro-part-1-1/</id>
     <published>2020-03-27T16:00:00.000Z</published>
-    <updated>2020-03-28T12:47:41.000Z</updated>
+    <updated>2020-03-29T09:05:13.000Z</updated>
     
     <summary type="html">
     
@@ -410,11 +410,11 @@
   </entry>
   
   <entry>
-    <title>打造高效的PHP工作环境</title>
+    <title>打造高效的工作环境</title>
     <link href="https://fei.dev/2016/01/01/PHP-%E6%89%93%E9%80%A0%E9%AB%98%E6%95%88%E7%9A%84PHP%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83/"/>
     <id>https://fei.dev/2016/01/01/PHP-打造高效的PHP工作环境/</id>
     <published>2016-01-01T14:05:27.000Z</published>
-    <updated>2019-04-02T13:16:02.000Z</updated>
+    <updated>2020-03-29T09:07:35.000Z</updated>
     
     <summary type="html">
     
@@ -428,12 +428,10 @@
     
     </summary>
     
-      <category term="PHP" scheme="https://fei.dev/categories/PHP/"/>
+      <category term="Mac" scheme="https://fei.dev/categories/Mac/"/>
     
     
       <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
-    
-      <category term="PHP" scheme="https://fei.dev/tags/PHP/"/>
     
       <category term="Homebrew" scheme="https://fei.dev/tags/Homebrew/"/>
     
