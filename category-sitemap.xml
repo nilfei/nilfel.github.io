@@ -8,6 +8,13 @@
     </url>
 
     <url>
+        <loc>https://fei.dev/categories/Mac/</loc>
+        <lastmod>2016-01-01T09:34:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://fei.dev/categories/Go/Go%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97/</loc>
         <lastmod>2018-02-13T09:34:46.000Z</lastmod>
         <changefreq>weekly</changefreq>

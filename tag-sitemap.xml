@@ -3,6 +3,20 @@
 
 
     <url>
+        <loc>https://fei.dev/tags/Homebrew/</loc>
+        <lastmod>2016-01-01T09:34:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://fei.dev/tags/Proxy/</loc>
+        <lastmod>2016-01-01T09:34:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://fei.dev/tags/Mac/</loc>
         <lastmod>2019-05-13T14:57:20.000Z</lastmod>
         <changefreq>weekly</changefreq>

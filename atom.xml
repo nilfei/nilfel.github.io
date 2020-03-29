@@ -409,4 +409,34 @@
     
   </entry>
   
+  <entry>
+    <title>打造高效的工作环境</title>
+    <link href="https://fei.dev/2016/01/01/PHP-%E7%8E%AF%E5%A2%83/"/>
+    <id>https://fei.dev/2016/01/01/PHP-环境/</id>
+    <published>2016-01-01T04:05:00.000Z</published>
+    <updated>2016-01-01T09:34:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;用了一段时间的Mac系统， 记录一下使用心得&lt;br&gt;在使用大多数环境时，为了偷懒更加偏向于Homebrew的依赖安装，省去了自己编译的方法，所以&lt;br&gt;在开始的时候呢，首先说一下翻墙环境&lt;br&gt;我使用的是SS + kcptun
+        
+      
+    
+    </summary>
+    
+      <category term="Mac" scheme="https://fei.dev/categories/Mac/"/>
+    
+    
+      <category term="Mac" scheme="https://fei.dev/tags/Mac/"/>
+    
+      <category term="Homebrew" scheme="https://fei.dev/tags/Homebrew/"/>
+    
+      <category term="Proxy" scheme="https://fei.dev/tags/Proxy/"/>
+    
+  </entry>
+  
 </feed>
