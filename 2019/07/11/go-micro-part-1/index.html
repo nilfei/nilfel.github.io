@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="明风的小站">
 <meta property="og:description" content="TL;DR12参考地址https://micro.mu/docs/cn/index.html Part.1micro由以下几个部分组成： API网关（API Gateway）： - API Gateway 网关。API网关是请求的入口，把请求动态路由到具体服务。网关允许我们建立可伸缩的后台微服务架构，并且让工作在前端的公共API更健壮。Micro API基于服务发现拥有强大的路由能力，通过我们预置">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-29T09:30:36.000Z">
+<meta property="og:updated_time" content="2020-03-29T10:33:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MicroService Part.1, 认识Go-Micro">
 <meta name="twitter:description" content="TL;DR12参考地址https://micro.mu/docs/cn/index.html Part.1micro由以下几个部分组成： API网关（API Gateway）： - API Gateway 网关。API网关是请求的入口，把请求动态路由到具体服务。网关允许我们建立可伸缩的后台微服务架构，并且让工作在前端的公共API更健壮。Micro API基于服务发现拥有强大的路由能力，通过我们预置">
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-29 17:30:36" itemprop="dateModified" datetime="2020-03-29T17:30:36+08:00">2020-03-29</time>
+                <time title="修改时间：2020-03-29 18:33:22" itemprop="dateModified" datetime="2020-03-29T18:33:22+08:00">2020-03-29</time>
               
             
           </span>
@@ -509,6 +509,34 @@
 <li><p>Go-micro框架（Go Framework）： Go Micro框架是Micro的底层、核心。GO-Micro把分布式服务抽象，并提供简便的方式让大家构建具有高弹性的微服务。</p>
 </li>
 </ol>
+<h1 id="Part-2"><a href="#Part-2" class="headerlink" title="Part.2"></a>Part.2</h1><h2 id="整体框架组成"><a href="#整体框架组成" class="headerlink" title="整体框架组成"></a>整体框架组成</h2><ul>
+<li><p>micro </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Go Micro可以帮你编写微服务。</span><br><span class="line"></span><br><span class="line">Go Micro抽象出分布式系统</span><br><span class="line">集成服务发布、RPC、分发/订阅机制、消息编码</span><br><span class="line">超时容错、重试机制、负载均衡</span><br><span class="line">功能可扩展</span><br><span class="line">可插拔的后台交换技术</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>config</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Go Config可以管理复杂的配置</span><br><span class="line"></span><br><span class="line">动态管理 - 加载配置不需要重启</span><br><span class="line">可插拔 - 可以选择从哪个源加载配置：文件、环境变量、consul。</span><br><span class="line">可合并 - 针对多个配置源可以合并并重写。</span><br><span class="line">回退 - 可以指定当key不存在时设置值。</span><br><span class="line">可观察 - 可以查看配置的变动。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>plugins</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Go Plugins</span><br><span class="line">go-micro与micro的插件集</span><br><span class="line">包含了绝大多数的后端技术</span><br><span class="line">grpc, kubernetes, etcd, kafka等等</span><br><span class="line">经过生产环境验证</span><br></pre></td></tr></table></figure>
+<h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><p>Go Micro把分布式系统的各种细节抽象出来。下面是它的主要特性。</p>
+<ul>
+<li><p>服务发现（Service Discovery） - 自动服务注册与名称解析。服务发现是微服务开发中的核心。当服务A要与服务B协作时，它得知道B在哪里。默认的服务发现系统是Consul，而multicast DNS (mdns，组播)机制作为本地解决方案，或者零依赖的P2P网络中的SWIM协议（gossip）。 <code>Registry</code></p>
+</li>
+<li><p>负载均衡（Load Balancing） - 在服务发现之上构建了负载均衡机制。当我们得到一个服务的任意多个的实例节点时，我们要一个机制去决定要路由到哪一个节点。我们使用随机处理过的哈希负载均衡机制来保证对服务请求颁发的均匀分布，并且在发生问题时进行重试。 <code>Selector</code></p>
+</li>
+<li><p>消息编码（Message Encoding） - 支持基于内容类型（content-type）动态编码消息。客户端和服务端会一起使用content-type的格式来对Go进行无缝编/解码。各种各样的消息被编码会发送到不同的客户端，客户端服服务端默认会处理这些消息。content-type默认包含proto-rpc和json-rpc。 <code>Codec</code></p>
+</li>
+<li><p>Request/Response - RPC通信基于支持双向流的请求/响应方式，我们提供有抽象的同步通信机制。请求发送到服务时，会自动解析、负载均衡、拨号、转成字节流，默认的传输协议是http/1.1，而tls下使用http2协议。<code>Transport</code></p>
+</li>
+<li><p>异步消息（Async Messaging） - 发布订阅（PubSub）头等功能内置在异步通信与事件驱动架构中。事件通知在微服务开发中处于核心位置。默认的消息传送使用点到点http/1.1，激活tls时则使用http2。 <code>Broker</code></p>
+</li>
+<li><p>可插拔接口（Pluggable Interfaces） - Go Micro为每个分布式系统抽象出接口。因此，Go Micro的接口都是可插拔的，允许其在运行时不可知的情况下仍可支持。所以只要实现接口，可以在内部使用任何的技术。更多插件请参考：github.com/micro/go-plugins。</p>
+</li>
+</ul>
+<h1 id="关于如何了解框架"><a href="#关于如何了解框架" class="headerlink" title="关于如何了解框架"></a>关于如何了解框架</h1><p><a href="https://micro.mu/docs/cn/go-micro.html" target="_blank" rel="noopener">https://micro.mu/docs/cn/go-micro.html</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://micro.mu/docs/cn/features.html" target="_blank" rel="noopener">https://micro.mu/docs/cn/features.html</a></p>
 
       
     </div>
@@ -750,7 +778,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Part-1"><span class="nav-number">1.</span> <span class="nav-text">Part.1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#micro由以下几个部分组成："><span class="nav-number">1.1.</span> <span class="nav-text">micro由以下几个部分组成：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Part-1"><span class="nav-number">1.</span> <span class="nav-text">Part.1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#micro由以下几个部分组成："><span class="nav-number">1.1.</span> <span class="nav-text">micro由以下几个部分组成：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part-2"><span class="nav-number">2.</span> <span class="nav-text">Part.2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#整体框架组成"><span class="nav-number">2.1.</span> <span class="nav-text">整体框架组成</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特性"><span class="nav-number">3.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于如何了解框架"><span class="nav-number">4.</span> <span class="nav-text">关于如何了解框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
