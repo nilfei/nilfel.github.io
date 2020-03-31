@@ -483,7 +483,140 @@
 <h1 id="什么是Protocol-Buffers"><a href="#什么是Protocol-Buffers" class="headerlink" title="什么是Protocol Buffers"></a>什么是Protocol Buffers</h1><p>Protocol Buffers 是Google 开发的一种与语言无关，平台无关的可扩展机制，用于对结构化数据进行序列化（例如XML），但更小，更快，更简单。您定义要一次构造数据的方式，然后可以使用生成的特殊源代码轻松地使用各种语言在各种数据流中写入和读取结构化数据。</p>
 <p>现在有许多框架等在使用Protocol Buffers。流行的RPC框架gRPC也是基于Protocol Buffers。 Protocol Buffers 目前有2和3两个版本号。</p>
 <h1 id="为什么要使用Protocol-Buffers？"><a href="#为什么要使用Protocol-Buffers？" class="headerlink" title="为什么要使用Protocol Buffers？"></a>为什么要使用Protocol Buffers？</h1><p>Protocol Buffers 是一种 灵活，高效，自动化的解决方案。使用协议缓冲区，您可以编写.proto要存储的数据结构的描述。由此，协议缓冲区编译器创建了一个类，该类以有效的二进制格式实现协议缓冲区数据的自动编码和解析。生成的类为构成协议缓冲区的字段提供获取器和设置器，并以协议为单位来详细阅读和写入协议缓冲区。重要的是，协议缓冲区格式支持随时间扩展格式的想法，以使代码仍可以读取以旧格式编码的数据。</p>
-<h1 id="定义一个序列化的proto"><a href="#定义一个序列化的proto" class="headerlink" title="定义一个序列化的proto"></a>定义一个序列化的proto</h1><p>从官方示例的Person.proto文件开始<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">// 传递的消息</span><br><span class="line">// 语法 proto3 不定义时为 proto2</span><br><span class="line">syntax = &quot;proto3&quot;;</span><br><span class="line">// 定义包名，生成时会引用该命名空间 </span><br><span class="line">// 如下这个包名会在go-micro中生成 package go_micro_service_user</span><br><span class="line">// 在Go中，除非您在.proto文件中明确提供了go_package选项，否则该包将用作Go包名称。</span><br><span class="line">option gopackage=&quot;&quot;</span><br><span class="line">packge &quot;go.micro.service.user&quot;</span><br><span class="line">// 引入一个timestamp.proto </span><br><span class="line">// 来源 https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/timestamp.proto</span><br><span class="line">import &quot;google/protobuf/timestamp.proto&quot;;</span><br><span class="line"></span><br><span class="line">message Person &#123;</span><br><span class="line">  // 定义一个属性传递，并给属性加上顺序</span><br><span class="line">  // 属性加上顺序的含义是 标记标识该字段在二进制编码中使用的唯一 标记</span><br><span class="line">  </span><br><span class="line">  string name = 1; // 姓名</span><br><span class="line">  int32 id = 2; // 唯一的用户ID</span><br><span class="line">  string email = 3; // 邮箱</span><br><span class="line">  // 定义枚举</span><br><span class="line">  enum PhoneType &#123;</span><br><span class="line">    MOBILE = 0; // 手机 </span><br><span class="line">    HOME = 1; // 家庭座机</span><br><span class="line">    WORK = 2; // 工作手机</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 包含关联电话联系方式</span><br><span class="line">  message PhoneNumber &#123;</span><br><span class="line">    string number = 1; //电话号码 </span><br><span class="line">    PhoneType type = 2; // 关联枚举</span><br><span class="line">  &#125;</span><br><span class="line">  // 多个电话号码 slice</span><br><span class="line">  // 如果一个字段为repeated，则该字段可以重复任意次（包括零次）。重复值的顺序将保留在协议缓冲区中。将重复字段视为动态大小的数组。</span><br><span class="line">  repeated PhoneNumber phones = 4;</span><br><span class="line"></span><br><span class="line">  //使用引用包中的 Timestamp结构</span><br><span class="line">  google.protobuf.Timestamp last_updated = 5;</span><br><span class="line">&#125;</span><br><span class="line">// 定义电话簿</span><br><span class="line">message AddressBook&#123;</span><br><span class="line">	// 多个人的slice</span><br><span class="line">	repeated Person people = 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="定义一个序列化的proto"><a href="#定义一个序列化的proto" class="headerlink" title="定义一个序列化的proto"></a>定义一个序列化的proto</h1><p>从官方示例的Person.proto文件开始<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">// 传递的消息</span><br><span class="line">// 语法 proto3 不定义时为 proto2</span><br><span class="line">syntax = &quot;proto3&quot;;</span><br><span class="line">// 定义包名，生成时会引用该命名空间 </span><br><span class="line">// 如下这个包名会在go-micro中生成 package go_micro_service_user</span><br><span class="line">// 在Go中，除非您在.proto文件中明确提供了go_package选项，否则该包将用作Go包名称。</span><br><span class="line">option gopackage=&quot;&quot;</span><br><span class="line">packge &quot;go.micro.service.user&quot;</span><br><span class="line">// 引入一个timestamp.proto </span><br><span class="line">// 来源 https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/timestamp.proto</span><br><span class="line">import &quot;google/protobuf/timestamp.proto&quot;;</span><br><span class="line"></span><br><span class="line">// 定义一个用户服务</span><br><span class="line">service User &#123;</span><br><span class="line">	// 定义接口</span><br><span class="line">    rpc Get (Request) returns (Response) &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">message Person &#123;</span><br><span class="line">  // 定义一个属性传递，并给属性加上顺序</span><br><span class="line">  // 属性加上顺序的含义是 标记标识该字段在二进制编码中使用的唯一 标记</span><br><span class="line">  </span><br><span class="line">  string name = 1; // 姓名</span><br><span class="line">  int32 id = 2; // 唯一的用户ID</span><br><span class="line">  string email = 3; // 邮箱</span><br><span class="line">  // 定义枚举</span><br><span class="line">  enum PhoneType &#123;</span><br><span class="line">    MOBILE = 0; // 手机 </span><br><span class="line">    HOME = 1; // 家庭座机</span><br><span class="line">    WORK = 2; // 工作手机</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 包含关联电话联系方式</span><br><span class="line">  message PhoneNumber &#123;</span><br><span class="line">    string number = 1; //电话号码 </span><br><span class="line">    PhoneType type = 2; // 关联枚举</span><br><span class="line">  &#125;</span><br><span class="line">  // 多个电话号码 slice</span><br><span class="line">  // 如果一个字段为repeated，则该字段可以重复任意次（包括零次）。重复值的顺序将保留在协议缓冲区中。将重复字段视为动态大小的数组。</span><br><span class="line">  repeated PhoneNumber phones = 4;</span><br><span class="line"></span><br><span class="line">  //使用引用包中的 Timestamp结构</span><br><span class="line">  google.protobuf.Timestamp last_updated = 5;</span><br><span class="line">&#125;</span><br><span class="line">// 定义电话簿</span><br><span class="line">message AddressBook&#123;</span><br><span class="line">	// 多个人的slice</span><br><span class="line">	repeated Person people = 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>#JSON对应表</p>
+<table>
+<thead>
+<tr>
+<th>支持的属性</th>
+<th>类型</th>
+<th>JSON example</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>object</td>
+<td><code>{&quot;fooBar&quot;: v, &quot;g&quot;: null, …}</code></td>
+<td>生成JSON对象。 消息字段名称被映射到lowerCamelCase并成为JSON对象键。 如果指定了 <code>json_name</code> 段选项，则将使用指定的值作为键。 解析器同时接受lowerCamelCase名称（或由 <code>json_name</code>选项指定的名称）和原始原型字段名称。  null 是所有字段类型的可接受值，并被视为相应字段类型的默认值。</td>
+</tr>
+<tr>
+<td>enum</td>
+<td>string</td>
+<td><code>&quot;FOO_BAR&quot;</code></td>
+<td>使用proto中指定的枚举值的名称。 解析器接受枚举名称和整数值。</td>
+</tr>
+<tr>
+<td>map</td>
+<td>object</td>
+<td><code>{&quot;k&quot;: v, …}</code></td>
+<td>所有键都转换为字符串。</td>
+</tr>
+<tr>
+<td>repeated V</td>
+<td>array</td>
+<td><code>[v, …]</code></td>
+<td><code>null</code> 接受为空列表[].</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>true, false</td>
+<td><code>true, false</code></td>
+<td></td>
+</tr>
+<tr>
+<td>string</td>
+<td>string</td>
+<td><code>&quot;Hello World!&quot;</code></td>
+<td></td>
+</tr>
+<tr>
+<td>bytes</td>
+<td>base64 string</td>
+<td><code>&quot;YWJjMTIzIT8kKiYoKSctPUB+&quot;</code></td>
+<td>JSON值将是使用带有填充的标准base64编码编码为字符串的数据。 接受带/不带填充的标准或URL安全base64编码。</td>
+</tr>
+<tr>
+<td>int32, fixed32, uint32</td>
+<td>number</td>
+<td><code>1, -10, 0</code></td>
+<td>JSON值为十进制数字。 可以接受数字或字符串。</td>
+</tr>
+<tr>
+<td>int64, fixed64, uint64</td>
+<td>string</td>
+<td><code>&quot;1&quot;, &quot;-10&quot;</code></td>
+<td>JSON值将是一个十进制字符串。 可以接受数字或字符串。</td>
+</tr>
+<tr>
+<td>float, double</td>
+<td>number</td>
+<td><code>1.1, -10.0, 0, &quot;NaN&quot;, &quot;Infinity&quot;</code></td>
+<td>JSON值将是数字或特殊字符串值“ NaN”，“ Infinity”和“ -Infinity”之一。 可以接受数字或字符串。 指数表示法也被接受。</td>
+</tr>
+<tr>
+<td>Any</td>
+<td><code>object</code></td>
+<td><code>{&quot;@type&quot;: &quot;url&quot;, &quot;f&quot;: v, … }</code></td>
+<td>如果Any包含具有特殊JSON映射的值，则将其转换如下：<code>{“ @type”：xxx，“ value”：yyy}</code>。 否则，该值将转换为JSON对象，并且将插入“ @type”字段以指示实际的数据类型。</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>string</td>
+<td><code>&quot;1972-01-01T10:00:20.021Z&quot;</code></td>
+<td>使用RFC 3339，其中生成的输出将始终进行Z归一化，并使用0、3、6或9个小数位。 也可以接受“ Z”以外的偏移。</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>string</td>
+<td><code>&quot;1.000340012s&quot;, &quot;1s&quot;</code></td>
+<td>生成的输出始终包含0、3、6或9个小数位数，具体取决于所需的精度，后跟后缀“ s”。 可接受的任何小数位数（也无），只要它们适合纳秒精度，并且后缀“ s”是必需的。</td>
+</tr>
+<tr>
+<td>Struct</td>
+<td><code>object</code></td>
+<td><code>{ … }</code></td>
+<td>任何JSON对象。 参见<code>struct.proto</code>。</td>
+</tr>
+<tr>
+<td>Wrapper types</td>
+<td>various types</td>
+<td><code>2, &quot;2&quot;, &quot;foo&quot;, true, &quot;true&quot;, null, 0, …</code></td>
+<td>包装器在JSON中使用与包装后的原始类型相同的表示形式，不同之处在于在数据转换和传输期间允许并保留`null’。</td>
+</tr>
+<tr>
+<td>FieldMask</td>
+<td>string</td>
+<td><code>&quot;f.fooBar,h&quot;</code></td>
+<td>参见<code>field_mask.proto</code>.</td>
+</tr>
+<tr>
+<td>ListValue</td>
+<td>array</td>
+<td><code>[foo, bar, …]</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Value</td>
+<td>value</td>
+<td></td>
+<td>任何JSON值</td>
+</tr>
+<tr>
+<td>NullValue</td>
+<td>null</td>
+<td></td>
+<td>JSON null</td>
+</tr>
+<tr>
+<td>Empty</td>
+<td>object</td>
+<td>{}</td>
+<td>空的JSON对象</td>
+</tr>
+</tbody>
+</table>
 
           
         
