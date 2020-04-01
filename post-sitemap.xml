@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>https://fei.dev/2020/04/01/%E4%BF%9D%E6%B4%BB%E6%96%B9%E6%A1%88-p2/</loc>
+        <lastmod>2020-04-01T04:44:34.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fei.dev/2020/04/01/%E4%BF%9D%E6%B4%BB%E6%96%B9%E6%A1%88-supervisor/</loc>
+        <lastmod>2020-04-01T04:44:29.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://fei.dev/2020/03/31/golang-golang-11/</loc>
         <lastmod>2020-03-31T09:30:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -121,6 +137,14 @@
 
     <url>
         <loc>https://fei.dev/2018/02/13/mysql-mysql-mha/</loc>
+        <lastmod>2018-02-13T09:34:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fei.dev/2018/02/13/mysql-mysql-percona/</loc>
         <lastmod>2018-02-13T09:34:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
