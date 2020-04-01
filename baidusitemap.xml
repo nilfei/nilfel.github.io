@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://fei.dev/2020/04/01/%E4%BF%9D%E6%B4%BB%E6%96%B9%E6%A1%88-p2/</loc>
-    <lastmod>2020-04-01</lastmod>
-  </url>  <url>
-    <loc>https://fei.dev/2020/04/01/%E4%BF%9D%E6%B4%BB%E6%96%B9%E6%A1%88-supervisor/</loc>
-    <lastmod>2020-04-01</lastmod>
-  </url>  <url>
     <loc>https://fei.dev/2020/03/31/golang-golang-11/</loc>
     <lastmod>2020-03-31</lastmod>
   </url>  <url>
@@ -50,6 +44,12 @@
     <lastmod>2018-02-13</lastmod>
   </url>  <url>
     <loc>https://fei.dev/2018/02/13/mysql-mysql-mha/</loc>
+    <lastmod>2018-02-13</lastmod>
+  </url>  <url>
+    <loc>https://fei.dev/2018/02/13/%E4%BF%9D%E6%B4%BB%E6%96%B9%E6%A1%88-p2/</loc>
+    <lastmod>2018-02-13</lastmod>
+  </url>  <url>
+    <loc>https://fei.dev/2018/02/13/%E4%BF%9D%E6%B4%BB%E6%96%B9%E6%A1%88-supervisor/</loc>
     <lastmod>2018-02-13</lastmod>
   </url>  <url>
     <loc>https://fei.dev/2018/02/13/mysql-mysql-percona/</loc>
