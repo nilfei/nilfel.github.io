@@ -77,6 +77,36 @@
   </entry>
   
   <entry>
+    <title>MicroService Part.2, go-micro Function 函数式编程模型</title>
+    <link href="https://fei.dev/2020/03/28/go-micro-part-2/"/>
+    <id>https://fei.dev/2020/03/28/go-micro-part-2/</id>
+    <published>2020-03-28T04:00:00.000Z</published>
+    <updated>2020-04-01T09:42:22.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;创建项目&quot;&gt;&lt;a href=&quot;#创建项目&quot; class=&quot;headerlink&quot; title=&quot;创建项目&quot;&gt;&lt;/a&gt;创建项目&lt;/h1&gt;&lt;p&gt;目录结构如下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="Go" scheme="https://fei.dev/categories/Go/"/>
+    
+      <category term="go-micro" scheme="https://fei.dev/categories/Go/go-micro/"/>
+    
+    
+      <category term="Golang" scheme="https://fei.dev/tags/Golang/"/>
+    
+      <category term="go-micro" scheme="https://fei.dev/tags/go-micro/"/>
+    
+  </entry>
+  
+  <entry>
     <title>汇编指令整理</title>
     <link href="https://fei.dev/2020/01/15/asm-%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/"/>
     <id>https://fei.dev/2020/01/15/asm-汇编指令整理/</id>
