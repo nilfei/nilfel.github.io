@@ -72,14 +72,14 @@
 
     <url>
         <loc>https://fei.dev/categories/Go/</loc>
-        <lastmod>2020-04-01T10:22:45.000Z</lastmod>
+        <lastmod>2020-04-01T12:46:50.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://fei.dev/categories/Go/go-micro/</loc>
-        <lastmod>2020-04-01T10:22:45.000Z</lastmod>
+        <lastmod>2020-04-01T12:46:50.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
