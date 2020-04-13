@@ -372,6 +372,518 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fei.dev/2020/04/13/shell-pull-code/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nilfei">
+      <meta itemprop="description" content="工作日志,学习日志">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fei.coding">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/04/13/shell-pull-code/" class="post-title-link" itemprop="url">循环 Pull Code</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-04-13 20:58:58 / 修改时间：21:02:48" itemprop="dateCreated datePublished" datetime="2020-04-13T20:58:58+08:00">2020-04-13</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="循环拉取文件夹下的git仓库"><a href="#循环拉取文件夹下的git仓库" class="headerlink" title="循环拉取文件夹下的git仓库"></a>循环拉取文件夹下的git仓库</h1><p>最近管理的服务有点多，来不及仓库全部拉取一遍，那么我找了一个脚本 保存为<code>pull_code.sh</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">for dir in $(ls -d */)</span><br><span class="line">do</span><br><span class="line">  cd $dir</span><br><span class="line">  echo &quot;into $dir&quot;</span><br><span class="line">  if [ -d &quot;.git&quot; ]; then</span><br><span class="line">     git pull</span><br><span class="line">  elif [ -d &quot;.svn&quot; ]; then</span><br><span class="line">     svn update</span><br><span class="line">  fi</span><br><span class="line">  cd ..</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<h1 id="添加到-zshrc"><a href="#添加到-zshrc" class="headerlink" title="添加到 .zshrc"></a>添加到 <code>.zshrc</code></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">upgrade-repositories() &#123;</span><br><span class="line">	for dir in */; do</span><br><span class="line">		cd $dir</span><br><span class="line">		echo &quot;into $dir&quot;</span><br><span class="line">		if [ -d &quot;.git&quot; ]; then</span><br><span class="line">		   git pull</span><br><span class="line">		elif [ -d &quot;.svn&quot; ]; then</span><br><span class="line">		   svn update</span><br><span class="line">		fi</span><br><span class="line">		cd ..</span><br><span class="line">	done</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="尝试运行"><a href="#尝试运行" class="headerlink" title="尝试运行"></a>尝试运行</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ cd /Volumes/Data/Code/www</span><br><span class="line">➜  www upgrade-repositories</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fei.dev/2020/04/03/go-micro-part-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nilfei">
+      <meta itemprop="description" content="工作日志,学习日志">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fei.coding">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/04/03/go-micro-part-4/" class="post-title-link" itemprop="url">part.4 Borker</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-04-03 14:13:52 / 修改时间：15:42:31" itemprop="dateCreated datePublished" datetime="2020-04-03T14:13:52+08:00">2020-04-03</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">官方对其解释为：</span><br><span class="line">broker 用于异步消息 是Pub/Sub的一个接口</span><br><span class="line">服务接口（Service Interface） - 所有特性都被打包在简单且高级的接口中，方便开发微服务。</span><br></pre></td></tr></table></figure>
+<h1 id="producer-生产者"><a href="#producer-生产者" class="headerlink" title="producer 生产者"></a>producer 生产者</h1><h1 id="consumer-消费者-订阅者"><a href="#consumer-消费者-订阅者" class="headerlink" title="consumer 消费者/订阅者"></a>consumer 消费者/订阅者</h1>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fei.dev/2019/07/11/go-micro-part-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nilfei">
+      <meta itemprop="description" content="工作日志,学习日志">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fei.coding">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/11/go-micro-part-1/" class="post-title-link" itemprop="url">MicroService Part.1, 认识Go-Micro</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-11 06:05:27" itemprop="dateCreated datePublished" datetime="2019-07-11T06:05:27+08:00">2019-07-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-03 14:15:31" itemprop="dateModified" datetime="2020-04-03T14:15:31+08:00">2020-04-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Go/go-micro/" itemprop="url" rel="index"><span itemprop="name">go-micro</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>TL;DR</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">参考地址</span><br><span class="line">https://micro.mu/docs/cn/index.html</span><br><span class="line"></span><br><span class="line">目前伦敦在修改商业版本，开源社区由https://github.com/vtolstov 维护</span><br></pre></td></tr></table></figure></p>
+<h1 id="Part-1"><a href="#Part-1" class="headerlink" title="Part.1"></a>Part.1</h1><h2 id="micro由以下几个部分组成："><a href="#micro由以下几个部分组成：" class="headerlink" title="micro由以下几个部分组成："></a>micro由以下几个部分组成：</h2><ol>
+<li><p>API网关（API Gateway）： - API Gateway 网关。API网关是请求的入口，把请求动态路由到具体服务。网关允许我们建立可伸缩的后台微服务架构，并且让工作在前端的公共API更健壮。Micro API基于服务发现拥有强大的路由能力，通过我们预置的handlers插件，它可以处理http、gRPC、websocket、消息推送事件等等。</p>
+</li>
+<li><p>命令行接口（Interactive CLI）： 交互式的命令行接口。CLI通过终端可以描述、查询、直接与平台和服务进行交互。CLI提供所有的命令让开发者明白微服务正在处理的事情。CLI也包含了交互模式。</p>
+</li>
+<li><p>服务代理（Service Proxy）： 服务代理，基于Go Micro和MUCP协议构建的透明的代理服务。它将服务发现、负载均衡、消息编码、中间件、传输及代理插件转移到某一（具体服务所在）位置，同api不同，它不暴露任何接口，只工作在内部环境，相当于桥接内部服务。</p>
+</li>
+<li><p>模板生成（Template Generation）： 基于模板快速创建新的服务代码。Micor提供预置的模板，通过模板编写统一风格的代码。</p>
+</li>
+<li><p>SlackOps小机器人（SlackOps Bot）： Slack小机器人插件，当它运行中服务中时，这个插件允许开发者通过Slack消息来操作平台。MicroBot插件提供聊天配置选项，这样就可以让团队通过向小机器人发送聊天消息来做一些我们希望它做的事，这里面当然也包含像动态发现服务一样创建slack命令。</p>
+</li>
+<li><p>管理控制台（Web Dashboard）： 通过Web管理控制台，可以直接在Web页面上查看服务的运行情况，展示端点信息，请求与响应状态，甚至直接向服务进行查询。管理控制台也有CLI交互页面提供给开发者在线上处理，就像直接操作终端一样。</p>
+</li>
+<li><p>Go-micro框架（Go Framework）： Go Micro框架是Micro的底层、核心。GO-Micro把分布式服务抽象，并提供简便的方式让大家构建具有高弹性的微服务。</p>
+</li>
+</ol>
+<h1 id="Part-2"><a href="#Part-2" class="headerlink" title="Part.2"></a>Part.2</h1><h2 id="整体框架组成"><a href="#整体框架组成" class="headerlink" title="整体框架组成"></a>整体框架组成</h2><ul>
+<li><p>micro </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Go Micro可以帮你编写微服务。</span><br><span class="line"></span><br><span class="line">Go Micro抽象出分布式系统</span><br><span class="line">集成服务发布、RPC、分发/订阅机制、消息编码</span><br><span class="line">超时容错、重试机制、负载均衡</span><br><span class="line">功能可扩展</span><br><span class="line">可插拔的后台交换技术</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>config</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Go Config可以管理复杂的配置</span><br><span class="line"></span><br><span class="line">动态管理 - 加载配置不需要重启</span><br><span class="line">可插拔 - 可以选择从哪个源加载配置：文件、环境变量、consul。</span><br><span class="line">可合并 - 针对多个配置源可以合并并重写。</span><br><span class="line">回退 - 可以指定当key不存在时设置值。</span><br><span class="line">可观察 - 可以查看配置的变动。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>plugins</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Go Plugins</span><br><span class="line">go-micro与micro的插件集</span><br><span class="line">包含了绝大多数的后端技术</span><br><span class="line">grpc, kubernetes, etcd, kafka等等</span><br><span class="line">经过生产环境验证</span><br></pre></td></tr></table></figure>
+<h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><p>Go Micro把分布式系统的各种细节抽象出来。下面是它的主要特性。</p>
+<ul>
+<li><p>服务发现（Service Discovery） - 自动服务注册与名称解析。服务发现是微服务开发中的核心。当服务A要与服务B协作时，它得知道B在哪里。默认的服务发现系统是Consul，而multicast DNS (mdns，组播)机制作为本地解决方案，或者零依赖的P2P网络中的SWIM协议（gossip）。 <code>Registry</code></p>
+</li>
+<li><p>负载均衡（Load Balancing） - 在服务发现之上构建了负载均衡机制。当我们得到一个服务的任意多个的实例节点时，我们要一个机制去决定要路由到哪一个节点。我们使用随机处理过的哈希负载均衡机制来保证对服务请求颁发的均匀分布，并且在发生问题时进行重试。 <code>Selector</code></p>
+</li>
+<li><p>消息编码（Message Encoding） - 支持基于内容类型（content-type）动态编码消息。客户端和服务端会一起使用content-type的格式来对Go进行无缝编/解码。各种各样的消息被编码会发送到不同的客户端，客户端服服务端默认会处理这些消息。content-type默认包含proto-rpc和json-rpc。 <code>Codec</code></p>
+</li>
+<li><p>Request/Response - RPC通信基于支持双向流的请求/响应方式，我们提供有抽象的同步通信机制。请求发送到服务时，会自动解析、负载均衡、拨号、转成字节流，默认的传输协议是http/1.1，而tls下使用http2协议。<code>Transport</code></p>
+</li>
+<li><p>异步消息（Async Messaging） - 发布订阅（PubSub）头等功能内置在异步通信与事件驱动架构中。事件通知在微服务开发中处于核心位置。默认的消息传送使用点到点http/1.1，激活tls时则使用http2。 <code>Broker</code></p>
+</li>
+<li><p>可插拔接口（Pluggable Interfaces） - Go Micro为每个分布式系统抽象出接口。因此，Go Micro的接口都是可插拔的，允许其在运行时不可知的情况下仍可支持。所以只要实现接口，可以在内部使用任何的技术。更多插件请参考：github.com/micro/go-plugins。</p>
+</li>
+</ul>
+<h1 id="关于如何了解框架"><a href="#关于如何了解框架" class="headerlink" title="关于如何了解框架"></a>关于如何了解框架</h1><p><a href="https://micro.mu/docs/cn/go-micro.html" target="_blank" rel="noopener">https://micro.mu/docs/cn/go-micro.html</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://micro.mu/docs/cn/features.html" target="_blank" rel="noopener">https://micro.mu/docs/cn/features.html</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fei.dev/2020/04/01/go-micro-part-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1260,230 +1772,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fei.dev/2019/07/11/go-micro-part-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nilfei">
-      <meta itemprop="description" content="工作日志,学习日志">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fei.coding">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/11/go-micro-part-1/" class="post-title-link" itemprop="url">MicroService Part.1, 认识Go-Micro</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-11 06:05:27" itemprop="dateCreated datePublished" datetime="2019-07-11T06:05:27+08:00">2019-07-11</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-03-29 18:33:22" itemprop="dateModified" datetime="2020-03-29T18:33:22+08:00">2020-03-29</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Go/go-micro/" itemprop="url" rel="index"><span itemprop="name">go-micro</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>TL;DR</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">参考地址</span><br><span class="line">https://micro.mu/docs/cn/index.html</span><br></pre></td></tr></table></figure></p>
-<h1 id="Part-1"><a href="#Part-1" class="headerlink" title="Part.1"></a>Part.1</h1><h2 id="micro由以下几个部分组成："><a href="#micro由以下几个部分组成：" class="headerlink" title="micro由以下几个部分组成："></a>micro由以下几个部分组成：</h2><ol>
-<li><p>API网关（API Gateway）： - API Gateway 网关。API网关是请求的入口，把请求动态路由到具体服务。网关允许我们建立可伸缩的后台微服务架构，并且让工作在前端的公共API更健壮。Micro API基于服务发现拥有强大的路由能力，通过我们预置的handlers插件，它可以处理http、gRPC、websocket、消息推送事件等等。</p>
-</li>
-<li><p>命令行接口（Interactive CLI）： 交互式的命令行接口。CLI通过终端可以描述、查询、直接与平台和服务进行交互。CLI提供所有的命令让开发者明白微服务正在处理的事情。CLI也包含了交互模式。</p>
-</li>
-<li><p>服务代理（Service Proxy）： 服务代理，基于Go Micro和MUCP协议构建的透明的代理服务。它将服务发现、负载均衡、消息编码、中间件、传输及代理插件转移到某一（具体服务所在）位置，同api不同，它不暴露任何接口，只工作在内部环境，相当于桥接内部服务。</p>
-</li>
-<li><p>模板生成（Template Generation）： 基于模板快速创建新的服务代码。Micor提供预置的模板，通过模板编写统一风格的代码。</p>
-</li>
-<li><p>SlackOps小机器人（SlackOps Bot）： Slack小机器人插件，当它运行中服务中时，这个插件允许开发者通过Slack消息来操作平台。MicroBot插件提供聊天配置选项，这样就可以让团队通过向小机器人发送聊天消息来做一些我们希望它做的事，这里面当然也包含像动态发现服务一样创建slack命令。</p>
-</li>
-<li><p>管理控制台（Web Dashboard）： 通过Web管理控制台，可以直接在Web页面上查看服务的运行情况，展示端点信息，请求与响应状态，甚至直接向服务进行查询。管理控制台也有CLI交互页面提供给开发者在线上处理，就像直接操作终端一样。</p>
-</li>
-<li><p>Go-micro框架（Go Framework）： Go Micro框架是Micro的底层、核心。GO-Micro把分布式服务抽象，并提供简便的方式让大家构建具有高弹性的微服务。</p>
-</li>
-</ol>
-<h1 id="Part-2"><a href="#Part-2" class="headerlink" title="Part.2"></a>Part.2</h1><h2 id="整体框架组成"><a href="#整体框架组成" class="headerlink" title="整体框架组成"></a>整体框架组成</h2><ul>
-<li><p>micro </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Go Micro可以帮你编写微服务。</span><br><span class="line"></span><br><span class="line">Go Micro抽象出分布式系统</span><br><span class="line">集成服务发布、RPC、分发/订阅机制、消息编码</span><br><span class="line">超时容错、重试机制、负载均衡</span><br><span class="line">功能可扩展</span><br><span class="line">可插拔的后台交换技术</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>config</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Go Config可以管理复杂的配置</span><br><span class="line"></span><br><span class="line">动态管理 - 加载配置不需要重启</span><br><span class="line">可插拔 - 可以选择从哪个源加载配置：文件、环境变量、consul。</span><br><span class="line">可合并 - 针对多个配置源可以合并并重写。</span><br><span class="line">回退 - 可以指定当key不存在时设置值。</span><br><span class="line">可观察 - 可以查看配置的变动。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>plugins</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Go Plugins</span><br><span class="line">go-micro与micro的插件集</span><br><span class="line">包含了绝大多数的后端技术</span><br><span class="line">grpc, kubernetes, etcd, kafka等等</span><br><span class="line">经过生产环境验证</span><br></pre></td></tr></table></figure>
-<h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><p>Go Micro把分布式系统的各种细节抽象出来。下面是它的主要特性。</p>
-<ul>
-<li><p>服务发现（Service Discovery） - 自动服务注册与名称解析。服务发现是微服务开发中的核心。当服务A要与服务B协作时，它得知道B在哪里。默认的服务发现系统是Consul，而multicast DNS (mdns，组播)机制作为本地解决方案，或者零依赖的P2P网络中的SWIM协议（gossip）。 <code>Registry</code></p>
-</li>
-<li><p>负载均衡（Load Balancing） - 在服务发现之上构建了负载均衡机制。当我们得到一个服务的任意多个的实例节点时，我们要一个机制去决定要路由到哪一个节点。我们使用随机处理过的哈希负载均衡机制来保证对服务请求颁发的均匀分布，并且在发生问题时进行重试。 <code>Selector</code></p>
-</li>
-<li><p>消息编码（Message Encoding） - 支持基于内容类型（content-type）动态编码消息。客户端和服务端会一起使用content-type的格式来对Go进行无缝编/解码。各种各样的消息被编码会发送到不同的客户端，客户端服服务端默认会处理这些消息。content-type默认包含proto-rpc和json-rpc。 <code>Codec</code></p>
-</li>
-<li><p>Request/Response - RPC通信基于支持双向流的请求/响应方式，我们提供有抽象的同步通信机制。请求发送到服务时，会自动解析、负载均衡、拨号、转成字节流，默认的传输协议是http/1.1，而tls下使用http2协议。<code>Transport</code></p>
-</li>
-<li><p>异步消息（Async Messaging） - 发布订阅（PubSub）头等功能内置在异步通信与事件驱动架构中。事件通知在微服务开发中处于核心位置。默认的消息传送使用点到点http/1.1，激活tls时则使用http2。 <code>Broker</code></p>
-</li>
-<li><p>可插拔接口（Pluggable Interfaces） - Go Micro为每个分布式系统抽象出接口。因此，Go Micro的接口都是可插拔的，允许其在运行时不可知的情况下仍可支持。所以只要实现接口，可以在内部使用任何的技术。更多插件请参考：github.com/micro/go-plugins。</p>
-</li>
-</ul>
-<h1 id="关于如何了解框架"><a href="#关于如何了解框架" class="headerlink" title="关于如何了解框架"></a>关于如何了解框架</h1><p><a href="https://micro.mu/docs/cn/go-micro.html" target="_blank" rel="noopener">https://micro.mu/docs/cn/go-micro.html</a></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://micro.mu/docs/cn/features.html" target="_blank" rel="noopener">https://micro.mu/docs/cn/features.html</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fei.dev/2020/01/15/asm-汇编指令整理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2104,354 +2392,6 @@ width: 40%;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fei.dev/2018/02/13/golang-golang-10/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nilfei">
-      <meta itemprop="description" content="工作日志,学习日志">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fei.coding">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/02/13/golang-golang-10/" class="post-title-link" itemprop="url">golang part3. 反射，IO, net/http</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-13 00:30:00 / 修改时间：17:34:46" itemprop="dateCreated datePublished" datetime="2018-02-13T00:30:00+08:00">2018-02-13</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Go/Go入门系列/" itemprop="url" rel="index"><span itemprop="name">Go入门系列</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p><a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%B0%84_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6" target="_blank" rel="noopener">反射介绍</a>) 如果你对反射不了解，请看维基百科解释</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;reflect&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">type User struct &#123;</span><br><span class="line">	ID       uint64</span><br><span class="line">	Username string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	var str = &quot;我是一个字符串&quot;</span><br><span class="line">	fmt.Println(&quot;反射出来的类型为: &quot;, reflect.TypeOf(str))</span><br><span class="line">	//反射出来的类型为:  string</span><br><span class="line">	var i32 int32 = 32</span><br><span class="line">	fmt.Println(&quot;反射出来的类型为: &quot;, reflect.TypeOf(i32))</span><br><span class="line">	//反射出来的类型为:  int32</span><br><span class="line">	var slice = make([]string, 0)</span><br><span class="line">	fmt.Println(&quot;反射出来的类型为: &quot;, reflect.TypeOf(slice))</span><br><span class="line">	//反射出来的类型为:  int32</span><br><span class="line"></span><br><span class="line">	var user User</span><br><span class="line">	user.ID = 1</span><br><span class="line">	user.Username = &quot;admin&quot;</span><br><span class="line">	tp := reflect.TypeOf(user)</span><br><span class="line">	fmt.Println(&quot;反射出类型： &quot;, tp)</span><br><span class="line">	fmt.Println(&quot;反射struct 的 名称： &quot;, tp.Name())</span><br><span class="line">	fmt.Println(&quot;反射出值: &quot;, reflect.ValueOf(user))</span><br><span class="line"></span><br><span class="line">	fmt.Println(&quot;反射出来的Kind: &quot;, tp.Kind())</span><br><span class="line">	for i := 0; i &lt; tp.NumField(); i++ &#123;</span><br><span class="line">		fmt.Println(&quot;字段 :&quot;, i, tp.Field(i), &quot;字段名称 :&quot;, tp.Field(i).Name, &quot;字段类型 :&quot;, tp.Field(i).Type)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="I-O"><a href="#I-O" class="headerlink" title="I/O"></a>I/O</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;io/ioutil&quot;</span><br><span class="line">	&quot;os&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	// 读取文件</span><br><span class="line">	data, err := ioutil.ReadFile(&quot;./test.txt&quot;)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(&quot;无法读取文件,&quot;, err)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Println(&quot;文件内容：&quot;, string(data))</span><br><span class="line"></span><br><span class="line">	// 创建文件</span><br><span class="line">	f, err := os.Create(&quot;./test1.txt&quot;)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	l, err := f.WriteString(&quot;俺也一样&quot;)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		err := f.Close()</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(l, &quot;写入完成&quot;)</span><br><span class="line">	err = f.Close()</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// 追加文件</span><br><span class="line"></span><br><span class="line">	file, err := os.OpenFile(&quot;./test1.txt&quot;, os.O_APPEND|os.O_WRONLY, 0644)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	newLine := &quot;俺也一样 +1&quot;</span><br><span class="line">	_, err = fmt.Fprintln(file, newLine)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		err := file.Close()</span><br><span class="line">		fmt.Println(err)</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	err = file.Close()</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(&quot;文件追加完成&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="net-http"><a href="#net-http" class="headerlink" title="net/http"></a>net/http</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;io/ioutil&quot;</span><br><span class="line">	&quot;net/http&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	// 客户端 获取内容</span><br><span class="line">	resp, err := http.Get(&quot;https://www.fei.dev&quot;)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		// handle error</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	//程序在使用完回复后必须关闭回复的主体。</span><br><span class="line">	defer resp.Body.Close()</span><br><span class="line"></span><br><span class="line">	body, _ := ioutil.ReadAll(resp.Body)</span><br><span class="line">	fmt.Println(string(body))</span><br><span class="line"></span><br><span class="line">	// 服务端</span><br><span class="line"></span><br><span class="line">	http.HandleFunc(&quot;/&quot;, func(writer http.ResponseWriter, request *http.Request) &#123;</span><br><span class="line">		writer.Write([]byte(&quot;你好朋友.&quot;))</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	err = http.ListenAndServe(&quot;:8088&quot;, nil)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fei.dev/2018/02/13/golang-golang-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nilfei">
-      <meta itemprop="description" content="工作日志,学习日志">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fei.coding">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/02/13/golang-golang-2/" class="post-title-link" itemprop="url">Golang 安装和配置</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-13 00:30:00 / 修改时间：17:34:46" itemprop="dateCreated datePublished" datetime="2018-02-13T00:30:00+08:00">2018-02-13</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Go/Go入门系列/" itemprop="url" rel="index"><span itemprop="name">Go入门系列</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>TL;DR</code></p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><blockquote>
-<p>Mac 安装<br>brew install go</p>
-</blockquote>
-<h1 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">export GOPATH=/Volumes/Data/gopath</span><br><span class="line">export GOROOT=/usr/local/opt/go/libexec</span><br><span class="line"># 开启go mod 模式 下一章节会说到</span><br><span class="line">export GO111MODULE=on</span><br><span class="line">export PATH=&quot;$PATH:$GOPATH/bin:$GOROOT/bin&quot;</span><br><span class="line">#此处为go get 代理，但是并没有什么卵用</span><br><span class="line">#export GOPROXY=https://goproxy.io</span><br><span class="line">export GOPROXY=</span><br></pre></td></tr></table></figure>
-<h1 id="代理问题"><a href="#代理问题" class="headerlink" title="代理问题"></a>代理问题</h1><p>上面说到<code>GOPROXY</code>没有什么卵用，还是经常网络掉包什么的<br>这里推荐几个方式<br><code>proxifer</code> 强制全局走代理</p>
-<p>or </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">proxychains4 go get -u github.com/swaggo/swag</span><br></pre></td></tr></table></figure>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="https://xofred.github.io/ss-in-mac-terminal/" target="_blank" rel="noopener">Mac OSX 终端走 shadowsocks 代理</a></p>
-<p><a href="http://blackwolfsec.cc/2016/09/19/Proxifier_Shadowshocks/" target="_blank" rel="noopener">Proxifier+Shadowshocks系统全局代理的正确姿势</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2500,7 +2440,7 @@ width: 40%;
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2578,7 +2518,11 @@ width: 40%;
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

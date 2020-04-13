@@ -17,13 +17,6 @@
     </url>
 
     <url>
-        <loc>https://fei.dev/tags/mysql/</loc>
-        <lastmod>2018-02-13T09:34:46.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://fei.dev/tags/more-HA/</loc>
         <lastmod>2018-02-13T09:34:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -31,8 +24,8 @@
     </url>
 
     <url>
-        <loc>https://fei.dev/tags/Mac/</loc>
-        <lastmod>2019-05-13T14:57:20.000Z</lastmod>
+        <loc>https://fei.dev/tags/mysql/</loc>
+        <lastmod>2018-02-13T09:34:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -45,14 +38,21 @@
     </url>
 
     <url>
-        <loc>https://fei.dev/tags/asm/</loc>
-        <lastmod>2020-01-14T16:45:47.000Z</lastmod>
+        <loc>https://fei.dev/tags/Mac/</loc>
+        <lastmod>2019-05-13T14:57:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://fei.dev/tags/%E6%B1%87%E7%BC%96/</loc>
+        <lastmod>2020-01-14T16:45:47.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://fei.dev/tags/asm/</loc>
         <lastmod>2020-01-14T16:45:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -67,14 +67,28 @@
 
     <url>
         <loc>https://fei.dev/tags/Golang/</loc>
-        <lastmod>2020-04-01T12:46:50.000Z</lastmod>
+        <lastmod>2020-04-03T06:15:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://fei.dev/tags/go-micro/</loc>
-        <lastmod>2020-04-01T12:46:50.000Z</lastmod>
+        <lastmod>2020-04-03T06:15:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://fei.dev/tags/shell/</loc>
+        <lastmod>2020-04-13T13:02:48.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://fei.dev/tags/git/</loc>
+        <lastmod>2020-04-13T13:02:48.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

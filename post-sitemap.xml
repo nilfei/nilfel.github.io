@@ -8,6 +8,30 @@
     </url>
 
     <url>
+        <loc>https://fei.dev/2020/04/13/shell-pull-code/</loc>
+        <lastmod>2020-04-13T13:02:48.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fei.dev/2020/04/03/go-micro-part-4/</loc>
+        <lastmod>2020-04-03T07:42:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fei.dev/2019/07/11/go-micro-part-1/</loc>
+        <lastmod>2020-04-03T06:15:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://fei.dev/2020/04/01/go-micro-part-3/</loc>
         <lastmod>2020-04-01T12:46:50.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -34,14 +58,6 @@
     <url>
         <loc>https://fei.dev/2020/03/28/go-micro-part-1-1/</loc>
         <lastmod>2020-03-30T08:18:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://fei.dev/2019/07/11/go-micro-part-1/</loc>
-        <lastmod>2020-03-29T10:33:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -88,14 +104,6 @@
     </url>
 
     <url>
-        <loc>https://fei.dev/2018/02/13/golang-golang-5/</loc>
-        <lastmod>2018-02-13T09:34:46.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://fei.dev/2018/02/13/golang-golang-4/</loc>
         <lastmod>2018-02-13T09:34:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -104,7 +112,7 @@
     </url>
 
     <url>
-        <loc>https://fei.dev/2018/02/13/golang-golang-8/</loc>
+        <loc>https://fei.dev/2018/02/13/golang-golang-5/</loc>
         <lastmod>2018-02-13T09:34:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -128,7 +136,7 @@
     </url>
 
     <url>
-        <loc>https://fei.dev/2018/02/13/golang-golang-9/</loc>
+        <loc>https://fei.dev/2018/02/13/golang-golang-8/</loc>
         <lastmod>2018-02-13T09:34:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -136,7 +144,15 @@
     </url>
 
     <url>
-        <loc>https://fei.dev/2018/02/13/mysql-mysql-mha/</loc>
+        <loc>https://fei.dev/2018/02/13/%E4%BF%9D%E6%B4%BB%E6%96%B9%E6%A1%88-supervisor/</loc>
+        <lastmod>2018-02-13T09:34:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://fei.dev/2018/02/13/golang-golang-9/</loc>
         <lastmod>2018-02-13T09:34:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -160,7 +176,7 @@
     </url>
 
     <url>
-        <loc>https://fei.dev/2018/02/13/%E4%BF%9D%E6%B4%BB%E6%96%B9%E6%A1%88-supervisor/</loc>
+        <loc>https://fei.dev/2018/02/13/mysql-mysql-mha/</loc>
         <lastmod>2018-02-13T09:34:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

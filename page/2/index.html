@@ -372,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fei.dev/2018/02/13/golang-golang-5/">
+    <link itemprop="mainEntityOfPage" href="https://fei.dev/2018/02/13/golang-golang-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nilfei">
@@ -392,7 +392,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/02/13/golang-golang-5/" class="post-title-link" itemprop="url">golang part2. 断言，流程控制，运算</a>
+                <a href="/2018/02/13/golang-golang-10/" class="post-title-link" itemprop="url">golang part3. 反射，IO, net/http</a>
               
             
           </h1>
@@ -483,10 +483,188 @@
       
         
           
-            <h1 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line">//自定义类型</span><br><span class="line">type sw interface &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	// 给类型赋值</span><br><span class="line">	var s sw = 0x0D</span><br><span class="line">	// 断言</span><br><span class="line">	fmt.Println(s.(int))</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">  package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;errors&quot;</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	var d int64 = 1200</span><br><span class="line">	fmt.Println(d)</span><br><span class="line">	if d%10 != 1 &#123;</span><br><span class="line">		fmt.Println(&quot;a&quot;)</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		fmt.Println(&quot;b&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">	// i32 测试</span><br><span class="line">	var i32 int32 = 1200</span><br><span class="line">	str, err := test(i32)</span><br><span class="line">	fmt.Println(str)</span><br><span class="line">	// 空字符串</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		// 无法判断类型</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//i64 测试</span><br><span class="line"></span><br><span class="line">	s, err := test(d)</span><br><span class="line">	fmt.Println(s)</span><br><span class="line">	// 您传入的是 ： 1200</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		// 不会发生错误</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func test(i interface&#123;&#125;) (str string, err error) &#123;</span><br><span class="line">	switch i.(type) &#123;</span><br><span class="line">	case int64:</span><br><span class="line">		sprintf := fmt.Sprintf(&quot;您传入的是 ： %d&quot;, i)</span><br><span class="line">		return sprintf, nil</span><br><span class="line">	&#125;</span><br><span class="line">	return &quot;&quot;, errors.New(&quot;无法判断类型&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 循环一百次</span><br><span class="line">for i:=1; i &lt;=100; i++ &#123; </span><br><span class="line">    // 大于50停止循环 </span><br><span class="line">    if i &gt; 50&#123;</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">    // 求于等于0 跳过</span><br><span class="line">    if i %2 == 0&#123;</span><br><span class="line">        continue</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 死循环</span><br><span class="line">//for &#123;</span><br><span class="line">//	fmt.Println(time.Now().Second())</span><br><span class="line">//	time.Sleep(time.Second * 3)</span><br><span class="line">//&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="switch-选择"><a href="#switch-选择" class="headerlink" title="switch 选择"></a>switch 选择</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	test := &quot;A&quot;</span><br><span class="line">	switch test &#123;</span><br><span class="line">	case &quot;A&quot;:</span><br><span class="line">		fmt.Println(test)</span><br><span class="line">	case &quot;B&quot;:</span><br><span class="line">		fmt.Println(&quot;B&quot;)</span><br><span class="line">	case &quot;C&quot;:</span><br><span class="line">		fmt.Println(&quot;C&quot;)</span><br><span class="line">	case &quot;Q&quot;, &quot;P&quot;:</span><br><span class="line">		fmt.Println(&quot;Q,P&quot;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	switch num := 99; &#123;</span><br><span class="line">	case num &lt; 50:</span><br><span class="line">		fmt.Printf(&quot;%d 小于 %d\n&quot;, num, 50)</span><br><span class="line">		//跳转到下一个case</span><br><span class="line">		fallthrough</span><br><span class="line">	case num &lt; 100:</span><br><span class="line">		fmt.Printf(&quot;%d 小于 %d\n&quot;, num, 100)</span><br><span class="line">		//跳转到下一个case</span><br><span class="line">		fallthrough</span><br><span class="line">	case num &lt; 200:</span><br><span class="line">		fmt.Printf(&quot;%d 小于 %d&quot;, num, 200)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p><a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%B0%84_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6" target="_blank" rel="noopener">反射介绍</a>) 如果你对反射不了解，请看维基百科解释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;reflect&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">type User struct &#123;</span><br><span class="line">	ID       uint64</span><br><span class="line">	Username string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	var str = &quot;我是一个字符串&quot;</span><br><span class="line">	fmt.Println(&quot;反射出来的类型为: &quot;, reflect.TypeOf(str))</span><br><span class="line">	//反射出来的类型为:  string</span><br><span class="line">	var i32 int32 = 32</span><br><span class="line">	fmt.Println(&quot;反射出来的类型为: &quot;, reflect.TypeOf(i32))</span><br><span class="line">	//反射出来的类型为:  int32</span><br><span class="line">	var slice = make([]string, 0)</span><br><span class="line">	fmt.Println(&quot;反射出来的类型为: &quot;, reflect.TypeOf(slice))</span><br><span class="line">	//反射出来的类型为:  int32</span><br><span class="line"></span><br><span class="line">	var user User</span><br><span class="line">	user.ID = 1</span><br><span class="line">	user.Username = &quot;admin&quot;</span><br><span class="line">	tp := reflect.TypeOf(user)</span><br><span class="line">	fmt.Println(&quot;反射出类型： &quot;, tp)</span><br><span class="line">	fmt.Println(&quot;反射struct 的 名称： &quot;, tp.Name())</span><br><span class="line">	fmt.Println(&quot;反射出值: &quot;, reflect.ValueOf(user))</span><br><span class="line"></span><br><span class="line">	fmt.Println(&quot;反射出来的Kind: &quot;, tp.Kind())</span><br><span class="line">	for i := 0; i &lt; tp.NumField(); i++ &#123;</span><br><span class="line">		fmt.Println(&quot;字段 :&quot;, i, tp.Field(i), &quot;字段名称 :&quot;, tp.Field(i).Name, &quot;字段类型 :&quot;, tp.Field(i).Type)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="I-O"><a href="#I-O" class="headerlink" title="I/O"></a>I/O</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;io/ioutil&quot;</span><br><span class="line">	&quot;os&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	// 读取文件</span><br><span class="line">	data, err := ioutil.ReadFile(&quot;./test.txt&quot;)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(&quot;无法读取文件,&quot;, err)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Println(&quot;文件内容：&quot;, string(data))</span><br><span class="line"></span><br><span class="line">	// 创建文件</span><br><span class="line">	f, err := os.Create(&quot;./test1.txt&quot;)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	l, err := f.WriteString(&quot;俺也一样&quot;)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		err := f.Close()</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(l, &quot;写入完成&quot;)</span><br><span class="line">	err = f.Close()</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// 追加文件</span><br><span class="line"></span><br><span class="line">	file, err := os.OpenFile(&quot;./test1.txt&quot;, os.O_APPEND|os.O_WRONLY, 0644)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	newLine := &quot;俺也一样 +1&quot;</span><br><span class="line">	_, err = fmt.Fprintln(file, newLine)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		err := file.Close()</span><br><span class="line">		fmt.Println(err)</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	err = file.Close()</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(&quot;文件追加完成&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="net-http"><a href="#net-http" class="headerlink" title="net/http"></a>net/http</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;io/ioutil&quot;</span><br><span class="line">	&quot;net/http&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	// 客户端 获取内容</span><br><span class="line">	resp, err := http.Get(&quot;https://www.fei.dev&quot;)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		// handle error</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	//程序在使用完回复后必须关闭回复的主体。</span><br><span class="line">	defer resp.Body.Close()</span><br><span class="line"></span><br><span class="line">	body, _ := ioutil.ReadAll(resp.Body)</span><br><span class="line">	fmt.Println(string(body))</span><br><span class="line"></span><br><span class="line">	// 服务端</span><br><span class="line"></span><br><span class="line">	http.HandleFunc(&quot;/&quot;, func(writer http.ResponseWriter, request *http.Request) &#123;</span><br><span class="line">		writer.Write([]byte(&quot;你好朋友.&quot;))</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	err = http.ListenAndServe(&quot;:8088&quot;, nil)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fei.dev/2018/02/13/golang-golang-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nilfei">
+      <meta itemprop="description" content="工作日志,学习日志">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fei.coding">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/02/13/golang-golang-2/" class="post-title-link" itemprop="url">Golang 安装和配置</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-13 00:30:00 / 修改时间：17:34:46" itemprop="dateCreated datePublished" datetime="2018-02-13T00:30:00+08:00">2018-02-13</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Go/Go入门系列/" itemprop="url" rel="index"><span itemprop="name">Go入门系列</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>TL;DR</code></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><blockquote>
+<p>Mac 安装<br>brew install go</p>
+</blockquote>
+<h1 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">export GOPATH=/Volumes/Data/gopath</span><br><span class="line">export GOROOT=/usr/local/opt/go/libexec</span><br><span class="line"># 开启go mod 模式 下一章节会说到</span><br><span class="line">export GO111MODULE=on</span><br><span class="line">export PATH=&quot;$PATH:$GOPATH/bin:$GOROOT/bin&quot;</span><br><span class="line">#此处为go get 代理，但是并没有什么卵用</span><br><span class="line">#export GOPROXY=https://goproxy.io</span><br><span class="line">export GOPROXY=</span><br></pre></td></tr></table></figure>
+<h1 id="代理问题"><a href="#代理问题" class="headerlink" title="代理问题"></a>代理问题</h1><p>上面说到<code>GOPROXY</code>没有什么卵用，还是经常网络掉包什么的<br>这里推荐几个方式<br><code>proxifer</code> 强制全局走代理</p>
+<p>or </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">proxychains4 go get -u github.com/swaggo/swag</span><br></pre></td></tr></table></figure>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="https://xofred.github.io/ss-in-mac-terminal/" target="_blank" rel="noopener">Mac OSX 终端走 shadowsocks 代理</a></p>
+<p><a href="http://blackwolfsec.cc/2016/09/19/Proxifier_Shadowshocks/" target="_blank" rel="noopener">Proxifier+Shadowshocks系统全局代理的正确姿势</a></p>
+
           
         
       
@@ -723,7 +901,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fei.dev/2018/02/13/golang-golang-8/">
+    <link itemprop="mainEntityOfPage" href="https://fei.dev/2018/02/13/golang-golang-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nilfei">
@@ -743,7 +921,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/02/13/golang-golang-8/" class="post-title-link" itemprop="url">golang part3. 协程，频道，select, WaitGroup && mutex</a>
+                <a href="/2018/02/13/golang-golang-5/" class="post-title-link" itemprop="url">golang part2. 断言，流程控制，运算</a>
               
             
           </h1>
@@ -834,10 +1012,10 @@
       
         
           
-            <h1 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">什么是协程</span><br><span class="line">OS 并不理解 协程，协程是在 用户层 模拟出来的调度，协程运行在线程之上，所以协程没有上下文切换消耗。</span><br></pre></td></tr></table></figure>
-<h1 id="协程，频道"><a href="#协程，频道" class="headerlink" title="协程，频道"></a>协程，频道</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;time&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 感兴趣的朋友可以去了解一下</span><br><span class="line">func main() &#123;</span><br><span class="line">	// 协程</span><br><span class="line">	go func() &#123;</span><br><span class="line">		fmt.Println(&quot;现在时间是:&quot;, time.Now().String())</span><br><span class="line">	&#125;()</span><br><span class="line">	// 并没有任何输出</span><br><span class="line">	// golang 协程已经启动了，发生了什么无法打印现在时间呢</span><br><span class="line"></span><br><span class="line">	// 事实上 go主进程 不会等待 go 协程执行完， 主进程调用go 协程后会顺序执行你的下一步代码</span><br><span class="line">	// 所以，上述代码 调用协程后，主进程 执行下一步代码，因为下一步代码 没有之后，主进程生命周期完结退出了</span><br><span class="line"></span><br><span class="line">	// 让主进程等待几秒钟 查看go 协程的打印信息</span><br><span class="line">	time.Sleep(time.Second * 3)</span><br><span class="line">	// 等待后，你会发现协程中的打印可以正常输出了</span><br><span class="line">	// 现在时间是: 2020-03-28 17:02:20.059775 +0800 CST m=+0.000452348</span><br><span class="line"></span><br><span class="line">	// Channel 双向频道 长度为5或者可缓冲长度</span><br><span class="line">	var gochan = make(chan string, 5)</span><br><span class="line">	go func() &#123;</span><br><span class="line">		// 协程执行，并将消息发送到频道信息中</span><br><span class="line">		gochan &lt;- &quot;chan 打印时间&quot; + time.Now().String()</span><br><span class="line">	&#125;()</span><br><span class="line">	// 如果无人接收该频道值则会发生死锁</span><br><span class="line">	fmt.Println(&lt;-gochan)</span><br><span class="line">	// 此时通过频道获取数据</span><br><span class="line">	// 打印数据为：chan 打印时间2020-03-28 17:15:09.589493 +0800 CST m=+3.000244013</span><br><span class="line"></span><br><span class="line">	// 只写频道：chan&lt;- T</span><br><span class="line">	// chan 后面 有箭头则是写入方向</span><br><span class="line">	var goschan = make(chan&lt;- string, 5)</span><br><span class="line">	goschan &lt;- &quot;可以写入&quot;</span><br><span class="line">	// 打印chan的地址</span><br><span class="line">	fmt.Println(goschan)</span><br><span class="line">	// 尝试接收打印时，IDE会报错</span><br><span class="line">	//fmt.Println(&lt;-goschan)</span><br><span class="line"></span><br><span class="line">	// 那么这个该怎么用呢</span><br><span class="line">	// 首先声明一个 双向的chanel</span><br><span class="line">	// 这里直接使用上的gochan 双向的 频道</span><br><span class="line">	onlySend(gochan)</span><br><span class="line">	fmt.Println(&lt;-gochan)</span><br><span class="line">	// 你好，现在是北京时间2020-03-28 17:26:23.318116 +0800 CST m=+3.002332002</span><br><span class="line"></span><br><span class="line">	// 只读频道：&lt;-chan T</span><br><span class="line">	//chan 前面有箭头则是读取方向</span><br><span class="line">	/*var gorchan = make(&lt;-chan string, 5)</span><br><span class="line">	fmt.Println(&lt;-gorchan)*/</span><br><span class="line">	//这样写会提示报错 fatal error: all goroutines are asleep - deadlock!</span><br><span class="line">	//因为单向的只读chan 没有数据可读 产生死锁</span><br><span class="line">	//那么单向的只读chan该如何使用呢</span><br><span class="line">	// 使用双向chan 与只写类似</span><br><span class="line">	// 这里直接使用上的gochan 双向的 频道</span><br><span class="line">	gochan &lt;- &quot;只读的Chan 读取数据啦&quot;</span><br><span class="line">	// 注意此时的gochan不存在数据，一样会造成死锁，所以在此之前，我们发送一个消息到chan中</span><br><span class="line">	onlyRead(gochan)</span><br><span class="line">	// 此时只读chan 正常运行打印了</span><br><span class="line">	// 只读的Chan 读取数据啦</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func onlyRead(read &lt;-chan string) &#123;</span><br><span class="line">	fmt.Println(&lt;-read)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 限制只允许发送信息，不允许接收信息</span><br><span class="line">func onlySend(say chan&lt;- string) &#123;</span><br><span class="line">	say &lt;- &quot;你好，现在是北京时间&quot; + time.Now().String()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;strconv&quot;</span><br><span class="line">	&quot;time&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func ConsoleInfo(c chan string) &#123;</span><br><span class="line">	for i := 0; i &lt; 10; i++ &#123;</span><br><span class="line"></span><br><span class="line">		c &lt;- &quot;当前打印 : &quot; + strconv.Itoa(i)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">	ch := make(chan string, 10)</span><br><span class="line">	go ConsoleInfo(ch)</span><br><span class="line">	var count = 0</span><br><span class="line">	for &#123;</span><br><span class="line">		select &#123;</span><br><span class="line">		case curr := &lt;-ch:</span><br><span class="line">			fmt.Println(&quot;接受到的消息： &quot;, curr)</span><br><span class="line">			count++</span><br><span class="line">			if count &gt;= 10 &#123;</span><br><span class="line">				return</span><br><span class="line">			&#125;</span><br><span class="line">		case &lt;-time.After(time.Second * 1):</span><br><span class="line">			fmt.Println(&quot;timeout&quot;)</span><br><span class="line">		default:</span><br><span class="line">			fmt.Println(&quot;没有接收到数据&quot;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="WaitGroup-amp-amp-mutex"><a href="#WaitGroup-amp-amp-mutex" class="headerlink" title="WaitGroup &amp;&amp; mutex"></a>WaitGroup &amp;&amp; mutex</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;sync&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">var count = 0</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	var w sync.WaitGroup</span><br><span class="line">	var m sync.Mutex</span><br><span class="line">	for i := 1; i &lt;= 100; i++ &#123;</span><br><span class="line">		w.Add(1)</span><br><span class="line">		go func() &#123;</span><br><span class="line">			// 加锁操作</span><br><span class="line">			m.Lock()</span><br><span class="line">			count = count + 1</span><br><span class="line">			// 操作完成 解锁</span><br><span class="line">			m.Unlock()</span><br><span class="line">			w.Done()</span><br><span class="line">		&#125;()</span><br><span class="line">	&#125;</span><br><span class="line">	w.Wait()</span><br><span class="line">	fmt.Println(&quot;最终值为：&quot;, count)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line">//自定义类型</span><br><span class="line">type sw interface &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	// 给类型赋值</span><br><span class="line">	var s sw = 0x0D</span><br><span class="line">	// 断言</span><br><span class="line">	fmt.Println(s.(int))</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">  package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;errors&quot;</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	var d int64 = 1200</span><br><span class="line">	fmt.Println(d)</span><br><span class="line">	if d%10 != 1 &#123;</span><br><span class="line">		fmt.Println(&quot;a&quot;)</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		fmt.Println(&quot;b&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">	// i32 测试</span><br><span class="line">	var i32 int32 = 1200</span><br><span class="line">	str, err := test(i32)</span><br><span class="line">	fmt.Println(str)</span><br><span class="line">	// 空字符串</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		// 无法判断类型</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//i64 测试</span><br><span class="line"></span><br><span class="line">	s, err := test(d)</span><br><span class="line">	fmt.Println(s)</span><br><span class="line">	// 您传入的是 ： 1200</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		// 不会发生错误</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func test(i interface&#123;&#125;) (str string, err error) &#123;</span><br><span class="line">	switch i.(type) &#123;</span><br><span class="line">	case int64:</span><br><span class="line">		sprintf := fmt.Sprintf(&quot;您传入的是 ： %d&quot;, i)</span><br><span class="line">		return sprintf, nil</span><br><span class="line">	&#125;</span><br><span class="line">	return &quot;&quot;, errors.New(&quot;无法判断类型&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 循环一百次</span><br><span class="line">for i:=1; i &lt;=100; i++ &#123; </span><br><span class="line">    // 大于50停止循环 </span><br><span class="line">    if i &gt; 50&#123;</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">    // 求于等于0 跳过</span><br><span class="line">    if i %2 == 0&#123;</span><br><span class="line">        continue</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 死循环</span><br><span class="line">//for &#123;</span><br><span class="line">//	fmt.Println(time.Now().Second())</span><br><span class="line">//	time.Sleep(time.Second * 3)</span><br><span class="line">//&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="switch-选择"><a href="#switch-选择" class="headerlink" title="switch 选择"></a>switch 选择</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	test := &quot;A&quot;</span><br><span class="line">	switch test &#123;</span><br><span class="line">	case &quot;A&quot;:</span><br><span class="line">		fmt.Println(test)</span><br><span class="line">	case &quot;B&quot;:</span><br><span class="line">		fmt.Println(&quot;B&quot;)</span><br><span class="line">	case &quot;C&quot;:</span><br><span class="line">		fmt.Println(&quot;C&quot;)</span><br><span class="line">	case &quot;Q&quot;, &quot;P&quot;:</span><br><span class="line">		fmt.Println(&quot;Q,P&quot;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	switch num := 99; &#123;</span><br><span class="line">	case num &lt; 50:</span><br><span class="line">		fmt.Printf(&quot;%d 小于 %d\n&quot;, num, 50)</span><br><span class="line">		//跳转到下一个case</span><br><span class="line">		fallthrough</span><br><span class="line">	case num &lt; 100:</span><br><span class="line">		fmt.Printf(&quot;%d 小于 %d\n&quot;, num, 100)</span><br><span class="line">		//跳转到下一个case</span><br><span class="line">		fallthrough</span><br><span class="line">	case num &lt; 200:</span><br><span class="line">		fmt.Printf(&quot;%d 小于 %d&quot;, num, 200)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1231,7 +1409,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fei.dev/2018/02/13/golang-golang-9/">
+    <link itemprop="mainEntityOfPage" href="https://fei.dev/2018/02/13/golang-golang-8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nilfei">
@@ -1251,7 +1429,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/02/13/golang-golang-9/" class="post-title-link" itemprop="url">golang part3. defer, errors,panic, recover</a>
+                <a href="/2018/02/13/golang-golang-8/" class="post-title-link" itemprop="url">golang part3. 协程，频道，select, WaitGroup && mutex</a>
               
             
           </h1>
@@ -1342,605 +1520,10 @@
       
         
           
-            <h1 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func incA() int &#123;</span><br><span class="line">	var A int</span><br><span class="line">	defer func() &#123;</span><br><span class="line">		A++</span><br><span class="line">	&#125;()</span><br><span class="line">	return A</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func incB() (B int64) &#123;</span><br><span class="line"></span><br><span class="line">	defer func() &#123;</span><br><span class="line">		B++</span><br><span class="line">	&#125;()</span><br><span class="line">	return B</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">1.defer是栈调用，后写的先执行</span><br><span class="line">2.defer的函数调用语句会在父函数调用后执行，但是用到的参数会在当时就执行得出</span><br><span class="line">*/</span><br><span class="line">func main() &#123;</span><br><span class="line">	fmt.Println(incA())</span><br><span class="line">	fmt.Println(incB())</span><br><span class="line">	fmt.Println(&quot;--------------------&quot;)</span><br><span class="line">	defer func() &#123;</span><br><span class="line">		fmt.Println(incA())</span><br><span class="line">	&#125;()</span><br><span class="line">	defer func() &#123;</span><br><span class="line">		defer func() &#123;</span><br><span class="line">			fmt.Println(incB())</span><br><span class="line">		&#125;()</span><br><span class="line">	&#125;()</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="errors-panic-recover"><a href="#errors-panic-recover" class="headerlink" title="errors,panic recover"></a>errors,panic recover</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;errors&quot;</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;os&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	fmt.Println(errors.New(&quot;你得罪了你的女朋友！&quot;))</span><br><span class="line">	fmt.Println(errors.New(&quot;你还一直不懂味！！！&quot;))</span><br><span class="line">	fmt.Println(errors.New(&quot;还是和往常一样在飞快的处理 err&quot;))</span><br><span class="line">	fmt.Println(&quot;你准备打开这本恋爱修炼手册&quot;)</span><br><span class="line">	f, err := os.Open(&quot;/恋爱修炼手册.txt&quot;)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(&quot;其实你并没有这本书&quot;)</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		fmt.Println(f.Name(), &quot;你打开了潘多拉魔盒&quot;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Println(errors.New(&quot;直到有一天，你的生活发生了改变&quot;))</span><br><span class="line"></span><br><span class="line">	fmt.Println(fmt.Errorf(&quot;你的女朋友问你，你是否还爱她. 你给出了答案： %s&quot;, &quot;你爱过大海，我爱过你&quot;))</span><br><span class="line">	fmt.Println(&quot;你在说这句话的时候，其实你已经准备好了向她求婚...&quot;)</span><br><span class="line">	defer func() &#123;</span><br><span class="line">		if r := recover(); r != nil &#123;</span><br><span class="line">			fmt.Println(&quot;醒醒吧，你没有女朋友，程序员哪来的女朋友&quot;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;()</span><br><span class="line">	fmt.Println(&quot;无法继续生活下去了&quot;)</span><br><span class="line">	panic(&quot;分手！！！&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fei.dev/2018/02/13/mysql-mysql-mha/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nilfei">
-      <meta itemprop="description" content="工作日志,学习日志">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fei.coding">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/02/13/mysql-mysql-mha/" class="post-title-link" itemprop="url">MySQL架构-MHA搭建部署</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-13 00:30:00 / 修改时间：17:34:46" itemprop="dateCreated datePublished" datetime="2018-02-13T00:30:00+08:00">2018-02-13</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mysql/高可用方案/" itemprop="url" rel="index"><span itemprop="name">高可用方案</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="系统环境："><a href="#系统环境：" class="headerlink" title="系统环境："></a>系统环境：</h1><ul>
-<li>centos 7.2.1511</li>
-<li>mysql 5.7.24-27</li>
-<li>mha4mysql-manager 0.58</li>
-<li>mha4mysql-node 0.58</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MHA 是较为常用的数据库中的高可用架构，以下部署是基于主从已经部署部署完毕的情况下搭建的。</span><br></pre></td></tr></table></figure>
-<h1 id="部署搭建"><a href="#部署搭建" class="headerlink" title="部署搭建"></a>部署搭建</h1><h2 id="需要注意："><a href="#需要注意：" class="headerlink" title="需要注意："></a>需要注意：</h2><p>mysql服务需要设置： relay_log_purge=0</p>
-<h2 id="所有MySQL数据库节点中添加定时任务："><a href="#所有MySQL数据库节点中添加定时任务：" class="headerlink" title="所有MySQL数据库节点中添加定时任务："></a>所有MySQL数据库节点中添加定时任务：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">00 04 * * *  /usr/bin/purge_relay_logs --user=ha_monitor --password=123123 --disable_relay_log_purge &amp;&gt;&gt; /var/purge_relay_logs.log</span><br></pre></td></tr></table></figure>
-<h2 id="配置SSH认证"><a href="#配置SSH认证" class="headerlink" title="配置SSH认证"></a>配置SSH认证</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">证书生成、公钥分发及依赖安装需要在每个节点上执行</span><br></pre></td></tr></table></figure>
-<h3 id="生成证书"><a href="#生成证书" class="headerlink" title="生成证书"></a>生成证书</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
-<h3 id="分发公钥到所有节点"><a href="#分发公钥到所有节点" class="headerlink" title="分发公钥到所有节点"></a>分发公钥到所有节点</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i /root/.ssh/id_rsa.pub root@172.17.0.55</span><br><span class="line">ssh-copy-id -i /root/.ssh/id_rsa.pub root@172.17.0.56</span><br><span class="line">ssh-copy-id -i /root/.ssh/id_rsa.pub root@172.17.0.57</span><br><span class="line">ssh-copy-id -i /root/.ssh/id_rsa.pub root@172.17.0.58</span><br></pre></td></tr></table></figure>
-<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install  epel-release  -y</span><br><span class="line">yum install  perl-DBD-MySQL perl-Config-Tiny perl-Log-Dispatch perl-Parallel-ForkManager \</span><br><span class="line">perl-Time-HiRes perl-devel perl-devel perl-CPAN  -y</span><br></pre></td></tr></table></figure>
-<h2 id="创建相关目录"><a href="#创建相关目录" class="headerlink" title="创建相关目录"></a>创建相关目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/masterha/ 目录需要在所有节点创建， /etc/mastermha/仅在ha-monitor节点中创建</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /etc/mastermha/</span><br><span class="line">mkdir -p /home/masterha/</span><br></pre></td></tr></table></figure>
-<h2 id="下载MHA组件"><a href="#下载MHA组件" class="headerlink" title="下载MHA组件"></a>下载MHA组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">所有节点需要安装mha node 节点，仅manager需要安装在ha-monitor节点上</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget \</span><br><span class="line">https://github.com/yoshinorim/mha4mysql-node/releases/download/v0.58/mha4mysql-node-0.58-0.el7.centos.noarch.rpm</span><br><span class="line">wget \</span><br><span class="line">https://github.com/yoshinorim/mha4mysql-manager/releases/download/v0.58/mha4mysql-manager-0.58-0.el7.centos.noarch.rpm</span><br></pre></td></tr></table></figure>
-<h3 id="在所有节点上安装mha-node-组件："><a href="#在所有节点上安装mha-node-组件：" class="headerlink" title="在所有节点上安装mha-node 组件："></a>在所有节点上安装mha-node 组件：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm -y</span><br></pre></td></tr></table></figure>
-<h3 id="在ha-monitor节点上安装mha4mysql-manager-组件："><a href="#在ha-monitor节点上安装mha4mysql-manager-组件：" class="headerlink" title="在ha-monitor节点上安装mha4mysql-manager 组件："></a>在ha-monitor节点上安装mha4mysql-manager 组件：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm  -y</span><br></pre></td></tr></table></figure>
-<h3 id="创建监控用户："><a href="#创建监控用户：" class="headerlink" title="创建监控用户："></a>创建监控用户：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE USER &apos;ha_monitor&apos;@&apos;172.17.0.%&apos; IDENTIFIED BY &apos;123123&apos;;</span><br><span class="line">mysql&gt; GRANT ALL ON *.* TO &apos;ha_monitor&apos;@&apos;172.17.0.%&apos; ;</span><br></pre></td></tr></table></figure>
-<h3 id="在ha-monitor节点添加配置文件："><a href="#在ha-monitor节点添加配置文件：" class="headerlink" title="在ha-monitor节点添加配置文件："></a>在ha-monitor节点添加配置文件：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; /etc/mastermha/app1.conf &lt;&lt; EOF</span><br><span class="line">[server default]</span><br><span class="line">#授权的manager监控用号和密码</span><br><span class="line">user=ha_monitor</span><br><span class="line">password=123123</span><br><span class="line"></span><br><span class="line">#MySQL服务复制用户和密码</span><br><span class="line">repl_user=sync</span><br><span class="line">repl_password=123123</span><br><span class="line"></span><br><span class="line"># ssh远程登录用户和端口</span><br><span class="line">ssh_user=root</span><br><span class="line">ssh_port=22</span><br><span class="line"></span><br><span class="line"># 检测主master存活间隔和类型</span><br><span class="line">ping_interval=1</span><br><span class="line">ping_type=SELECT</span><br><span class="line"></span><br><span class="line">#管理端log路径</span><br><span class="line">manager_log=/home/masterha/manager.log</span><br><span class="line">#管理服务端所使用的目录</span><br><span class="line">manager_workdir=/home/masterha/</span><br><span class="line">#远程节点工作目录</span><br><span class="line">remote_workdir=/home/masterha/</span><br><span class="line">#数据库binlog目录</span><br><span class="line">master_binlog_dir=/data/mysql_3306_core/log/binary_log</span><br><span class="line"></span><br><span class="line">#故障failover脚本，需在官网的基础上修改配置</span><br><span class="line">master_ip_failover_script=/usr/local/bin/master_ip_failover</span><br><span class="line">master_ip_online_change_script=/usr/local/bin/master_ip_online_change</span><br><span class="line"></span><br><span class="line">#检测路由主master是否宕机</span><br><span class="line">secondary_check_script=&quot;masterha_secondary_check -s 172.17.0.56 -s 172.17.0.57&quot;</span><br><span class="line"></span><br><span class="line">[server1]</span><br><span class="line">hostname=172.17.0.56</span><br><span class="line">port=3306</span><br><span class="line">candidate_master=1</span><br><span class="line"></span><br><span class="line">[server2]</span><br><span class="line">hostname=172.17.0.57</span><br><span class="line">port=3306</span><br><span class="line">#设置可参数选举为MYSQL MASTER</span><br><span class="line">candidate_master=1</span><br><span class="line">#忽略延迟</span><br><span class="line">check_repl_delay=0</span><br><span class="line"></span><br><span class="line">[server3]</span><br><span class="line">hostname=172.17.0.58</span><br><span class="line">port=3306</span><br><span class="line">#不参与选举</span><br><span class="line">no_master=1</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-<h3 id="在ha-monitor节点下载相关脚本并修改相关信息："><a href="#在ha-monitor节点下载相关脚本并修改相关信息：" class="headerlink" title="在ha-monitor节点下载相关脚本并修改相关信息："></a>在ha-monitor节点下载相关脚本并修改相关信息：</h3><h4 id="下载相关脚本"><a href="#下载相关脚本" class="headerlink" title="下载相关脚本"></a>下载相关脚本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget  https://down.niknk.com/MYSQL/master_ip_failover</span><br><span class="line">wget  https://down.niknk.com/MYSQL/master_ip_online_change</span><br><span class="line">mv master_ip_* /usr/local/bin/</span><br><span class="line">chmod +x /usr/local/bin/master_ip_*</span><br></pre></td></tr></table></figure>
-<h4 id="修改master-ip-failover、master-ip-online-change中的参数信息"><a href="#修改master-ip-failover、master-ip-online-change中的参数信息" class="headerlink" title="修改master_ip_failover、master_ip_online_change中的参数信息"></a>修改master_ip_failover、master_ip_online_change中的参数信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">my $vip = &apos;172.17.0.100&apos;; #配置虚拟IP</span><br><span class="line">my $gateway = &apos;172.17.0.1&apos;; #配置网关</span><br><span class="line">my $interface = &apos;eth0&apos;; #配置网卡名称</span><br></pre></td></tr></table></figure>
-<h3 id="测试SSH及主从复制是否正常："><a href="#测试SSH及主从复制是否正常：" class="headerlink" title="测试SSH及主从复制是否正常："></a>测试SSH及主从复制是否正常：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">masterha_check_ssh  --conf=/etc/mastermha/app1.conf</span><br><span class="line">masterha_check_repl  --conf=/etc/mastermha/app1.conf</span><br></pre></td></tr></table></figure>
-<h3 id="启动HA监控管理服务器："><a href="#启动HA监控管理服务器：" class="headerlink" title="启动HA监控管理服务器："></a>启动HA监控管理服务器：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nohup masterha_manager  --conf=/etc/mastermha/app1.conf --remove_dead_master_conf \</span><br><span class="line">--ignore_fail_on_start --ignore_last_failover &amp;</span><br></pre></td></tr></table></figure>
-<h4 id="检查是否正常："><a href="#检查是否正常：" class="headerlink" title="检查是否正常："></a>检查是否正常：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">masterha_check_status  --conf=/etc/mastermha/app1.conf</span><br></pre></td></tr></table></figure>
-<p>输出信息：<code>app1 (pid:11522) is running(0:PING_OK), master:172.17.0.56</code></p>
-<h1 id="后续维护："><a href="#后续维护：" class="headerlink" title="后续维护："></a>后续维护：</h1><h2 id="其它操作："><a href="#其它操作：" class="headerlink" title="其它操作："></a>其它操作：</h2><h3 id="停止HA监控管理服务"><a href="#停止HA监控管理服务" class="headerlink" title="停止HA监控管理服务"></a>停止HA监控管理服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">masterha_stop --conf=/etc/mastermha/app1.conf</span><br></pre></td></tr></table></figure>
-<h3 id="在线手动切换"><a href="#在线手动切换" class="headerlink" title="在线手动切换"></a>在线手动切换</h3><p><code>手动执行切换需要停止HA监控管理服务</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">masterha_master_switch --master_state=alive --new_master_host=172.17.0.56  \</span><br><span class="line">--orig_master_is_new_slave  --conf=/etc/mastermha/app1.conf</span><br></pre></td></tr></table></figure></p>
-<h3 id="宕机手动切换"><a href="#宕机手动切换" class="headerlink" title="宕机手动切换"></a>宕机手动切换</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">masterha_master_switch --master_state=dead  --new_master_host=172.17.0.57  \</span><br><span class="line">--orig_master_is_new_slave --conf=/etc/mastermha/app1.conf</span><br></pre></td></tr></table></figure>
-<h2 id="重新加入节点"><a href="#重新加入节点" class="headerlink" title="重新加入节点"></a>重新加入节点</h2><p><code>过滤 CHANGE MASTER 的信息并修改密码，在新添加的MySQL节点服务添加即可</code></p>
-<h3 id="过滤CHANGE-MASTER信息"><a href="#过滤CHANGE-MASTER信息" class="headerlink" title="过滤CHANGE MASTER信息"></a>过滤CHANGE MASTER信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &apos;CHANGE MASTER TO&apos; /home/masterha/manager.log</span><br></pre></td></tr></table></figure>
-<p>过滤出日志修改信息如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CHANGE MASTER TO MASTER_HOST=&apos;172.17.0.57&apos;,</span><br><span class="line">MASTER_PORT=3306,</span><br><span class="line">MASTER_AUTO_POSITION=1,</span><br><span class="line">MASTER_USER=&apos;sync&apos;,</span><br><span class="line">MASTER_PASSWORD=&apos;123123&apos;;</span><br></pre></td></tr></table></figure></p>
-<h3 id="在MHA配置文件中添加节点信息"><a href="#在MHA配置文件中添加节点信息" class="headerlink" title="在MHA配置文件中添加节点信息"></a>在MHA配置文件中添加节点信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/mastermha/app1.conf</span><br><span class="line"></span><br><span class="line">[server1]</span><br><span class="line">candidate_master=1</span><br><span class="line">check_repl_delay=0</span><br><span class="line">hostname=172.17.0.56</span><br><span class="line">port=3306</span><br></pre></td></tr></table></figure>
-<h3 id="重新测试SSH及主从复制是否正常"><a href="#重新测试SSH及主从复制是否正常" class="headerlink" title="重新测试SSH及主从复制是否正常"></a>重新测试SSH及主从复制是否正常</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">masterha_check_ssh  --conf=/etc/mastermha/app1.conf</span><br><span class="line">masterha_check_repl  --conf=/etc/mastermha/app1.conf</span><br></pre></td></tr></table></figure>
-<h3 id="重新启动HA监控管理服务器"><a href="#重新启动HA监控管理服务器" class="headerlink" title="重新启动HA监控管理服务器"></a>重新启动HA监控管理服务器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nohup masterha_manager  --conf=/etc/mastermha/app1.conf --remove_dead_master_conf \</span><br><span class="line">--ignore_fail_on_start --ignore_last_failover &amp;</span><br></pre></td></tr></table></figure>
-<h3 id="重新检查是否正常"><a href="#重新检查是否正常" class="headerlink" title="重新检查是否正常"></a>重新检查是否正常</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">masterha_check_status  --conf=/etc/mastermha/app1.conf</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fei.dev/2018/02/13/mysql-mysql-percona/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nilfei">
-      <meta itemprop="description" content="工作日志,学习日志">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fei.coding">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/02/13/mysql-mysql-percona/" class="post-title-link" itemprop="url">MySQL-大表优化-数据归档</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-13 00:30:00 / 修改时间：17:34:46" itemprop="dateCreated datePublished" datetime="2018-02-13T00:30:00+08:00">2018-02-13</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mysql/高可用方案/" itemprop="url" rel="index"><span itemprop="name">高可用方案</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="服务环境："><a href="#服务环境：" class="headerlink" title="服务环境："></a>服务环境：</h1><ul>
-<li>Centos7.2.1511</li>
-<li>percona-toolkit-3.0</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">信息        数据库IP地址   库名    表名</span><br><span class="line">主数据库    10.58.107.46   unix   sbtest01 </span><br><span class="line">归档数据库  10.58.107.46   unix   sbtest_archiver</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当一个表超过千万行的时候就会对数据库性能造成影响，但如果仅有INSERT操作和少量的SELECT操作,几乎没有UPDATE和DELETE操作的话，相对来说对数据库的性能影响不算很大。</span><br></pre></td></tr></table></figure>
-<h1 id="安装及使用方法："><a href="#安装及使用方法：" class="headerlink" title="安装及使用方法："></a>安装及使用方法：</h1><h2 id="安装percona-toolkit"><a href="#安装percona-toolkit" class="headerlink" title="安装percona-toolkit"></a>安装percona-toolkit</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.percona.com/downloads/percona-toolkit/3.0.11/binary/redhat/7/x86_64/percona-toolkit-3.0.11-1.el7.x86_64.rpm</span><br><span class="line">yum localinstall percona-toolkit-3.0.11-1.el7.x86_64.rpm</span><br></pre></td></tr></table></figure>
-<h2 id="创建归档表"><a href="#创建归档表" class="headerlink" title="创建归档表"></a>创建归档表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注：以下是归档示例，数据库是unix，归档的表是sbtest01 ，归档到 sbtest_archiver表中。</span><br><span class="line">use unix;</span><br><span class="line">create table sbtest_archiver like sbtest1 ;</span><br></pre></td></tr></table></figure>
-<h2 id="使用percona做数据库归档"><a href="#使用percona做数据库归档" class="headerlink" title="使用percona做数据库归档"></a>使用percona做数据库归档</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">注：以下归档命令是把数据归档完之后，并删除掉老的数据，如果用于线上执行前请慎重，如果做完归档不想删除掉老的数据可以使用no-delete参数</span><br><span class="line">pt-archiver \</span><br><span class="line">--source h=10.58.107.46,P=3306,u=monitor,p=123123,D=unix,t=sbtest1  \</span><br><span class="line">--dest h=10.58.107.46,P=3306,u=monitor,p=123123,D=unix,t=sbtest_archiver  \</span><br><span class="line">--where  &apos;id &lt;= 10000&apos;  --limit=1000 --txn-size=1000 \</span><br><span class="line">--statistics --charset=utf8</span><br></pre></td></tr></table></figure>
-<h1 id="参数详解"><a href="#参数详解" class="headerlink" title="参数详解"></a>参数详解</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">--no-delete     #归档时不删除老数据</span><br><span class="line">--limit         #表示每次事务删除的行数</span><br><span class="line">--txn-size      #每个事务提交的行数（读写）</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fei.dev/2018/02/13/保活方案-p2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nilfei">
-      <meta itemprop="description" content="工作日志,学习日志">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fei.coding">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/02/13/保活方案-p2/" class="post-title-link" itemprop="url">Pm2 保活进程工具</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-13 00:30:00 / 修改时间：17:34:46" itemprop="dateCreated datePublished" datetime="2018-02-13T00:30:00+08:00">2018-02-13</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/保活工具/" itemprop="url" rel="index"><span itemprop="name">保活工具</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/保活工具/高可用方案/" itemprop="url" rel="index"><span itemprop="name">高可用方案</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="使用pm2自动化部署node项目"><a href="#使用pm2自动化部署node项目" class="headerlink" title="使用pm2自动化部署node项目"></a>使用pm2自动化部署node项目</h1><h2 id="pm2简介"><a href="#pm2简介" class="headerlink" title="pm2简介"></a>pm2简介</h2><p>pm2（process manager）是一个进程管理工具，维护一个进程列表，可以用它来管理你的node进程，负责所有正在运行的进程，并查看node进程的状态，也支持性能监控，负载均衡等功能。</p>
-<h3 id="使用pm2管理的node程序的好处"><a href="#使用pm2管理的node程序的好处" class="headerlink" title="使用pm2管理的node程序的好处"></a>使用pm2管理的node程序的好处</h3><p>监听文件变化，自动重启程序<br>支持性能监控<br>负载均衡<br>程序崩溃自动重启<br>服务器重新启动时自动重新启动<br>自动化部署项目</p>
-<h2 id="pm2安装与使用"><a href="#pm2安装与使用" class="headerlink" title="pm2安装与使用"></a>pm2安装与使用</h2><h3 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install pm2 -g</span><br></pre></td></tr></table></figure>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><p>启动一个node程序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start start.js</span><br></pre></td></tr></table></figure>
-<p>启动进程并指定应用的程序名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start app.js --name application1</span><br></pre></td></tr></table></figure>
-<p>集群模式启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// -i 表示 number-instances 实例数量</span><br><span class="line">// max 表示 PM2将自动检测可用CPU的数量 可以自己指定数量</span><br><span class="line">pm2 start start.js -i max</span><br></pre></td></tr></table></figure>
-<p>添加进程监视</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 在文件改变的时候会重新启动程序</span><br><span class="line">pm2 start app.js --name start --watch</span><br></pre></td></tr></table></figure>
-<p>列出所有进程</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 list</span><br><span class="line">pm2 ls // 简写</span><br></pre></td></tr></table></figure>
-<p>从进程列表中删除进程</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm2 delete [appname] | id</span><br><span class="line">pm2 delete app  // 指定进程名删除</span><br><span class="line">pm2 delete 0    // 指定进程id删除</span><br></pre></td></tr></table></figure>
-<p>删除进程列表中所有进程</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 delete all</span><br></pre></td></tr></table></figure>
-<p>查看某个进程具体情况</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 describe app</span><br></pre></td></tr></table></figure>
-<p>查看进程的资源消耗情况</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 monit</span><br></pre></td></tr></table></figure>
-<p>重启进程</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 restart app // 重启指定名称的进程</span><br><span class="line">pm2 restart all // 重启所有进程</span><br></pre></td></tr></table></figure>
-<p>查看进程日志</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 logs app    // 查看该名称进程的日志</span><br><span class="line">pm2 logs all    // 查看所有进程的日志</span><br></pre></td></tr></table></figure>
-<p>设置pm2开机自启</p>
-<p>开启启动设置，此处是CentOS系统，其他系统替换最后一个选项（可选项：ubuntu, centos, redhat, gentoo, systemd, darwin, amazon）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 startup centos</span><br></pre></td></tr></table></figure>
-<p>然后按照提示需要输入的命令进行输入</p>
-<p>最后保存设置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 save</span><br></pre></td></tr></table></figure>
-<h2 id="通过pm2配置文件来自动部署项目"><a href="#通过pm2配置文件来自动部署项目" class="headerlink" title="通过pm2配置文件来自动部署项目"></a>通过pm2配置文件来自动部署项目</h2><p>确保服务器安装了pm2，没有安装的话先安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install pm2 -g</span><br></pre></td></tr></table></figure></p>
-<h3 id="在项目根目录下新建一个-deploy-yaml-文件"><a href="#在项目根目录下新建一个-deploy-yaml-文件" class="headerlink" title="在项目根目录下新建一个 deploy.yaml 文件"></a>在项目根目录下新建一个 deploy.yaml 文件</h3><h1 id="deploy-yaml"><a href="#deploy-yaml" class="headerlink" title="deploy.yaml"></a>deploy.yaml</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">apps:</span><br><span class="line">  - script: ./start.js       # 入口文件</span><br><span class="line">    name: &apos;app&apos;              # 程序名称</span><br><span class="line">    env:                     # 环境变量</span><br><span class="line">      COMMON_VARIABLE: true</span><br><span class="line">    env_production:</span><br><span class="line">      NODE_ENV: production</span><br><span class="line"></span><br><span class="line">deploy:                     # 部署脚本</span><br><span class="line">  production:               # 生产环境</span><br><span class="line">    user: lentoo            # 服务器的用户名</span><br><span class="line">    host: 192.168.2.166     # 服务器的ip地址</span><br><span class="line">    port: 22                # ssh端口</span><br><span class="line">    ref: origin/master      # 要拉取的git分支</span><br><span class="line">    ssh_options: StrictHostKeyChecking=no # SSH 公钥检查</span><br><span class="line">    repo: https://github.com/**.git # 远程仓库地址</span><br><span class="line">    path: /home              # 拉取到服务器某个目录下</span><br><span class="line">    pre-deploy: git fetch --all # 部署前执行</span><br><span class="line">    post-deploy: npm install &amp;&amp;  pm2 reload deploy.yaml --env production # 部署后执行</span><br><span class="line">    env:</span><br><span class="line">      NODE_ENV: production</span><br></pre></td></tr></table></figure>
-<h3 id="配置git的ssh免密认证"><a href="#配置git的ssh免密认证" class="headerlink" title="配置git的ssh免密认证"></a>配置git的ssh免密认证</h3><p>在服务器中生成rsa公钥和私钥，当前是 centos7 下进行</p>
-<p>前提服务器要安装git，没有安装的先安装git，已安装的跳过</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum –y install git</span><br></pre></td></tr></table></figure>
-<p>生成秘钥</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;xxx@xxx.com&quot;</span><br></pre></td></tr></table></figure>
-<p>在~/.ssh目录下有 id_rsa和 id_rsa.pub两个文件，其中id_rsa.pub文件里存放的即是公钥key。</p>
-<p>登录到GitHub，点击右上方的头像，选择settings ，点击Add SSH key，把id_rsa.pub的内容复制到里面即可。</p>
-<h3 id="使用pm2部署项目"><a href="#使用pm2部署项目" class="headerlink" title="使用pm2部署项目"></a>使用pm2部署项目</h3><p>每次部署前先将本地的代码提交到远程git仓库</p>
-<p>首次部署</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 deploy deploy.yaml production setup</span><br></pre></td></tr></table></figure>
-<p>部署完成后，既可登陆服务器查看配置的目录下是否从git上拉取了项目</p>
-<p>再次部署</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 deploy deploy.yaml production update</span><br></pre></td></tr></table></figure>
-<h3 id="该部署流程同样适用前端项目"><a href="#该部署流程同样适用前端项目" class="headerlink" title="该部署流程同样适用前端项目"></a>该部署流程同样适用前端项目</h3><p>如vue-cli的项目，自动部署到服务器，自动执行npm run build 命令，生成的dist目录，指定到nginx的静态文件目录下。</p>
-<h1 id="可能会遇到的坑"><a href="#可能会遇到的坑" class="headerlink" title="可能会遇到的坑"></a>可能会遇到的坑</h1><p>在window系统下 vscode的命令行程序，以及powershell执行部署的命令时，出现部署失败</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 deploy deploy.yaml production setup</span><br></pre></td></tr></table></figure>
-<p>解决方案：使用git命令行来执行</p>
-
+            <h1 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">什么是协程</span><br><span class="line">OS 并不理解 协程，协程是在 用户层 模拟出来的调度，协程运行在线程之上，所以协程没有上下文切换消耗。</span><br></pre></td></tr></table></figure>
+<h1 id="协程，频道"><a href="#协程，频道" class="headerlink" title="协程，频道"></a>协程，频道</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;time&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 感兴趣的朋友可以去了解一下</span><br><span class="line">func main() &#123;</span><br><span class="line">	// 协程</span><br><span class="line">	go func() &#123;</span><br><span class="line">		fmt.Println(&quot;现在时间是:&quot;, time.Now().String())</span><br><span class="line">	&#125;()</span><br><span class="line">	// 并没有任何输出</span><br><span class="line">	// golang 协程已经启动了，发生了什么无法打印现在时间呢</span><br><span class="line"></span><br><span class="line">	// 事实上 go主进程 不会等待 go 协程执行完， 主进程调用go 协程后会顺序执行你的下一步代码</span><br><span class="line">	// 所以，上述代码 调用协程后，主进程 执行下一步代码，因为下一步代码 没有之后，主进程生命周期完结退出了</span><br><span class="line"></span><br><span class="line">	// 让主进程等待几秒钟 查看go 协程的打印信息</span><br><span class="line">	time.Sleep(time.Second * 3)</span><br><span class="line">	// 等待后，你会发现协程中的打印可以正常输出了</span><br><span class="line">	// 现在时间是: 2020-03-28 17:02:20.059775 +0800 CST m=+0.000452348</span><br><span class="line"></span><br><span class="line">	// Channel 双向频道 长度为5或者可缓冲长度</span><br><span class="line">	var gochan = make(chan string, 5)</span><br><span class="line">	go func() &#123;</span><br><span class="line">		// 协程执行，并将消息发送到频道信息中</span><br><span class="line">		gochan &lt;- &quot;chan 打印时间&quot; + time.Now().String()</span><br><span class="line">	&#125;()</span><br><span class="line">	// 如果无人接收该频道值则会发生死锁</span><br><span class="line">	fmt.Println(&lt;-gochan)</span><br><span class="line">	// 此时通过频道获取数据</span><br><span class="line">	// 打印数据为：chan 打印时间2020-03-28 17:15:09.589493 +0800 CST m=+3.000244013</span><br><span class="line"></span><br><span class="line">	// 只写频道：chan&lt;- T</span><br><span class="line">	// chan 后面 有箭头则是写入方向</span><br><span class="line">	var goschan = make(chan&lt;- string, 5)</span><br><span class="line">	goschan &lt;- &quot;可以写入&quot;</span><br><span class="line">	// 打印chan的地址</span><br><span class="line">	fmt.Println(goschan)</span><br><span class="line">	// 尝试接收打印时，IDE会报错</span><br><span class="line">	//fmt.Println(&lt;-goschan)</span><br><span class="line"></span><br><span class="line">	// 那么这个该怎么用呢</span><br><span class="line">	// 首先声明一个 双向的chanel</span><br><span class="line">	// 这里直接使用上的gochan 双向的 频道</span><br><span class="line">	onlySend(gochan)</span><br><span class="line">	fmt.Println(&lt;-gochan)</span><br><span class="line">	// 你好，现在是北京时间2020-03-28 17:26:23.318116 +0800 CST m=+3.002332002</span><br><span class="line"></span><br><span class="line">	// 只读频道：&lt;-chan T</span><br><span class="line">	//chan 前面有箭头则是读取方向</span><br><span class="line">	/*var gorchan = make(&lt;-chan string, 5)</span><br><span class="line">	fmt.Println(&lt;-gorchan)*/</span><br><span class="line">	//这样写会提示报错 fatal error: all goroutines are asleep - deadlock!</span><br><span class="line">	//因为单向的只读chan 没有数据可读 产生死锁</span><br><span class="line">	//那么单向的只读chan该如何使用呢</span><br><span class="line">	// 使用双向chan 与只写类似</span><br><span class="line">	// 这里直接使用上的gochan 双向的 频道</span><br><span class="line">	gochan &lt;- &quot;只读的Chan 读取数据啦&quot;</span><br><span class="line">	// 注意此时的gochan不存在数据，一样会造成死锁，所以在此之前，我们发送一个消息到chan中</span><br><span class="line">	onlyRead(gochan)</span><br><span class="line">	// 此时只读chan 正常运行打印了</span><br><span class="line">	// 只读的Chan 读取数据啦</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func onlyRead(read &lt;-chan string) &#123;</span><br><span class="line">	fmt.Println(&lt;-read)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 限制只允许发送信息，不允许接收信息</span><br><span class="line">func onlySend(say chan&lt;- string) &#123;</span><br><span class="line">	say &lt;- &quot;你好，现在是北京时间&quot; + time.Now().String()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;strconv&quot;</span><br><span class="line">	&quot;time&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func ConsoleInfo(c chan string) &#123;</span><br><span class="line">	for i := 0; i &lt; 10; i++ &#123;</span><br><span class="line"></span><br><span class="line">		c &lt;- &quot;当前打印 : &quot; + strconv.Itoa(i)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">	ch := make(chan string, 10)</span><br><span class="line">	go ConsoleInfo(ch)</span><br><span class="line">	var count = 0</span><br><span class="line">	for &#123;</span><br><span class="line">		select &#123;</span><br><span class="line">		case curr := &lt;-ch:</span><br><span class="line">			fmt.Println(&quot;接受到的消息： &quot;, curr)</span><br><span class="line">			count++</span><br><span class="line">			if count &gt;= 10 &#123;</span><br><span class="line">				return</span><br><span class="line">			&#125;</span><br><span class="line">		case &lt;-time.After(time.Second * 1):</span><br><span class="line">			fmt.Println(&quot;timeout&quot;)</span><br><span class="line">		default:</span><br><span class="line">			fmt.Println(&quot;没有接收到数据&quot;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="WaitGroup-amp-amp-mutex"><a href="#WaitGroup-amp-amp-mutex" class="headerlink" title="WaitGroup &amp;&amp; mutex"></a>WaitGroup &amp;&amp; mutex</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;sync&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">var count = 0</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	var w sync.WaitGroup</span><br><span class="line">	var m sync.Mutex</span><br><span class="line">	for i := 1; i &lt;= 100; i++ &#123;</span><br><span class="line">		w.Add(1)</span><br><span class="line">		go func() &#123;</span><br><span class="line">			// 加锁操作</span><br><span class="line">			m.Lock()</span><br><span class="line">			count = count + 1</span><br><span class="line">			// 操作完成 解锁</span><br><span class="line">			m.Unlock()</span><br><span class="line">			w.Done()</span><br><span class="line">		&#125;()</span><br><span class="line">	&#125;</span><br><span class="line">	w.Wait()</span><br><span class="line">	fmt.Println(&quot;最终值为：&quot;, count)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -2164,6 +1747,351 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fei.dev/2018/02/13/golang-golang-9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nilfei">
+      <meta itemprop="description" content="工作日志,学习日志">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fei.coding">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/02/13/golang-golang-9/" class="post-title-link" itemprop="url">golang part3. defer, errors,panic, recover</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-13 00:30:00 / 修改时间：17:34:46" itemprop="dateCreated datePublished" datetime="2018-02-13T00:30:00+08:00">2018-02-13</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Go/Go入门系列/" itemprop="url" rel="index"><span itemprop="name">Go入门系列</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func incA() int &#123;</span><br><span class="line">	var A int</span><br><span class="line">	defer func() &#123;</span><br><span class="line">		A++</span><br><span class="line">	&#125;()</span><br><span class="line">	return A</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func incB() (B int64) &#123;</span><br><span class="line"></span><br><span class="line">	defer func() &#123;</span><br><span class="line">		B++</span><br><span class="line">	&#125;()</span><br><span class="line">	return B</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">1.defer是栈调用，后写的先执行</span><br><span class="line">2.defer的函数调用语句会在父函数调用后执行，但是用到的参数会在当时就执行得出</span><br><span class="line">*/</span><br><span class="line">func main() &#123;</span><br><span class="line">	fmt.Println(incA())</span><br><span class="line">	fmt.Println(incB())</span><br><span class="line">	fmt.Println(&quot;--------------------&quot;)</span><br><span class="line">	defer func() &#123;</span><br><span class="line">		fmt.Println(incA())</span><br><span class="line">	&#125;()</span><br><span class="line">	defer func() &#123;</span><br><span class="line">		defer func() &#123;</span><br><span class="line">			fmt.Println(incB())</span><br><span class="line">		&#125;()</span><br><span class="line">	&#125;()</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="errors-panic-recover"><a href="#errors-panic-recover" class="headerlink" title="errors,panic recover"></a>errors,panic recover</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;errors&quot;</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;os&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	fmt.Println(errors.New(&quot;你得罪了你的女朋友！&quot;))</span><br><span class="line">	fmt.Println(errors.New(&quot;你还一直不懂味！！！&quot;))</span><br><span class="line">	fmt.Println(errors.New(&quot;还是和往常一样在飞快的处理 err&quot;))</span><br><span class="line">	fmt.Println(&quot;你准备打开这本恋爱修炼手册&quot;)</span><br><span class="line">	f, err := os.Open(&quot;/恋爱修炼手册.txt&quot;)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(&quot;其实你并没有这本书&quot;)</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		fmt.Println(f.Name(), &quot;你打开了潘多拉魔盒&quot;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Println(errors.New(&quot;直到有一天，你的生活发生了改变&quot;))</span><br><span class="line"></span><br><span class="line">	fmt.Println(fmt.Errorf(&quot;你的女朋友问你，你是否还爱她. 你给出了答案： %s&quot;, &quot;你爱过大海，我爱过你&quot;))</span><br><span class="line">	fmt.Println(&quot;你在说这句话的时候，其实你已经准备好了向她求婚...&quot;)</span><br><span class="line">	defer func() &#123;</span><br><span class="line">		if r := recover(); r != nil &#123;</span><br><span class="line">			fmt.Println(&quot;醒醒吧，你没有女朋友，程序员哪来的女朋友&quot;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;()</span><br><span class="line">	fmt.Println(&quot;无法继续生活下去了&quot;)</span><br><span class="line">	panic(&quot;分手！！！&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fei.dev/2018/02/13/mysql-mysql-percona/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nilfei">
+      <meta itemprop="description" content="工作日志,学习日志">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fei.coding">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/02/13/mysql-mysql-percona/" class="post-title-link" itemprop="url">MySQL-大表优化-数据归档</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-13 00:30:00 / 修改时间：17:34:46" itemprop="dateCreated datePublished" datetime="2018-02-13T00:30:00+08:00">2018-02-13</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mysql/高可用方案/" itemprop="url" rel="index"><span itemprop="name">高可用方案</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="服务环境："><a href="#服务环境：" class="headerlink" title="服务环境："></a>服务环境：</h1><ul>
+<li>Centos7.2.1511</li>
+<li>percona-toolkit-3.0</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">信息        数据库IP地址   库名    表名</span><br><span class="line">主数据库    10.58.107.46   unix   sbtest01 </span><br><span class="line">归档数据库  10.58.107.46   unix   sbtest_archiver</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当一个表超过千万行的时候就会对数据库性能造成影响，但如果仅有INSERT操作和少量的SELECT操作,几乎没有UPDATE和DELETE操作的话，相对来说对数据库的性能影响不算很大。</span><br></pre></td></tr></table></figure>
+<h1 id="安装及使用方法："><a href="#安装及使用方法：" class="headerlink" title="安装及使用方法："></a>安装及使用方法：</h1><h2 id="安装percona-toolkit"><a href="#安装percona-toolkit" class="headerlink" title="安装percona-toolkit"></a>安装percona-toolkit</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.percona.com/downloads/percona-toolkit/3.0.11/binary/redhat/7/x86_64/percona-toolkit-3.0.11-1.el7.x86_64.rpm</span><br><span class="line">yum localinstall percona-toolkit-3.0.11-1.el7.x86_64.rpm</span><br></pre></td></tr></table></figure>
+<h2 id="创建归档表"><a href="#创建归档表" class="headerlink" title="创建归档表"></a>创建归档表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注：以下是归档示例，数据库是unix，归档的表是sbtest01 ，归档到 sbtest_archiver表中。</span><br><span class="line">use unix;</span><br><span class="line">create table sbtest_archiver like sbtest1 ;</span><br></pre></td></tr></table></figure>
+<h2 id="使用percona做数据库归档"><a href="#使用percona做数据库归档" class="headerlink" title="使用percona做数据库归档"></a>使用percona做数据库归档</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">注：以下归档命令是把数据归档完之后，并删除掉老的数据，如果用于线上执行前请慎重，如果做完归档不想删除掉老的数据可以使用no-delete参数</span><br><span class="line">pt-archiver \</span><br><span class="line">--source h=10.58.107.46,P=3306,u=monitor,p=123123,D=unix,t=sbtest1  \</span><br><span class="line">--dest h=10.58.107.46,P=3306,u=monitor,p=123123,D=unix,t=sbtest_archiver  \</span><br><span class="line">--where  &apos;id &lt;= 10000&apos;  --limit=1000 --txn-size=1000 \</span><br><span class="line">--statistics --charset=utf8</span><br></pre></td></tr></table></figure>
+<h1 id="参数详解"><a href="#参数详解" class="headerlink" title="参数详解"></a>参数详解</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">--no-delete     #归档时不删除老数据</span><br><span class="line">--limit         #表示每次事务删除的行数</span><br><span class="line">--txn-size      #每个事务提交的行数（读写）</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -2212,7 +2140,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2290,7 +2218,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

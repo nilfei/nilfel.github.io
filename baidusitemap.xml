@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://fei.dev/2020/04/13/shell-pull-code/</loc>
+    <lastmod>2020-04-13</lastmod>
+  </url>  <url>
+    <loc>https://fei.dev/2020/04/03/go-micro-part-4/</loc>
+    <lastmod>2020-04-03</lastmod>
+  </url>  <url>
+    <loc>https://fei.dev/2019/07/11/go-micro-part-1/</loc>
+    <lastmod>2020-04-03</lastmod>
+  </url>  <url>
     <loc>https://fei.dev/2020/04/01/go-micro-part-3/</loc>
     <lastmod>2020-04-01</lastmod>
   </url>  <url>
@@ -12,9 +21,6 @@
   </url>  <url>
     <loc>https://fei.dev/2020/03/28/go-micro-part-1-1/</loc>
     <lastmod>2020-03-30</lastmod>
-  </url>  <url>
-    <loc>https://fei.dev/2019/07/11/go-micro-part-1/</loc>
-    <lastmod>2020-03-29</lastmod>
   </url>  <url>
     <loc>https://fei.dev/2020/01/15/asm-%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</loc>
     <lastmod>2020-01-14</lastmod>
@@ -31,13 +37,10 @@
     <loc>https://fei.dev/2018/02/13/golang-golang-2/</loc>
     <lastmod>2018-02-13</lastmod>
   </url>  <url>
-    <loc>https://fei.dev/2018/02/13/golang-golang-5/</loc>
-    <lastmod>2018-02-13</lastmod>
-  </url>  <url>
     <loc>https://fei.dev/2018/02/13/golang-golang-4/</loc>
     <lastmod>2018-02-13</lastmod>
   </url>  <url>
-    <loc>https://fei.dev/2018/02/13/golang-golang-8/</loc>
+    <loc>https://fei.dev/2018/02/13/golang-golang-5/</loc>
     <lastmod>2018-02-13</lastmod>
   </url>  <url>
     <loc>https://fei.dev/2018/02/13/golang-golang-6/</loc>
@@ -46,10 +49,13 @@
     <loc>https://fei.dev/2018/02/13/golang-golang-7/</loc>
     <lastmod>2018-02-13</lastmod>
   </url>  <url>
-    <loc>https://fei.dev/2018/02/13/golang-golang-9/</loc>
+    <loc>https://fei.dev/2018/02/13/golang-golang-8/</loc>
     <lastmod>2018-02-13</lastmod>
   </url>  <url>
-    <loc>https://fei.dev/2018/02/13/mysql-mysql-mha/</loc>
+    <loc>https://fei.dev/2018/02/13/%E4%BF%9D%E6%B4%BB%E6%96%B9%E6%A1%88-supervisor/</loc>
+    <lastmod>2018-02-13</lastmod>
+  </url>  <url>
+    <loc>https://fei.dev/2018/02/13/golang-golang-9/</loc>
     <lastmod>2018-02-13</lastmod>
   </url>  <url>
     <loc>https://fei.dev/2018/02/13/mysql-mysql-percona/</loc>
@@ -58,7 +64,7 @@
     <loc>https://fei.dev/2018/02/13/%E4%BF%9D%E6%B4%BB%E6%96%B9%E6%A1%88-p2/</loc>
     <lastmod>2018-02-13</lastmod>
   </url>  <url>
-    <loc>https://fei.dev/2018/02/13/%E4%BF%9D%E6%B4%BB%E6%96%B9%E6%A1%88-supervisor/</loc>
+    <loc>https://fei.dev/2018/02/13/mysql-mysql-mha/</loc>
     <lastmod>2018-02-13</lastmod>
   </url>  <url>
     <loc>https://fei.dev/2016/01/01/PHP-%E7%8E%AF%E5%A2%83/</loc>
